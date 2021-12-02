@@ -17,7 +17,7 @@
   "scripts": {
     "lint:prettier": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint:ts": "run exec:eslint --cache-file $(pwd)/.eslintcache $(pwd)",
-    "lint": "echo 'no lint process required for the moment'",
+    "lint": "yarn lint:ts && yarn lint:prettier",
     "prettier": "prettier -c \"src/**/*.{js,ts,tsx}\""
   },
   "dependencies": {

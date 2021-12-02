@@ -65,8 +65,27 @@ exports[`<App /> should change page when user clicks on paginator 1`] = `
                 user3@email.com
               </td>
               <td>
+                <p>
+                  Global.consents.newsletter
+                </p>
                 <p />
                 <p />
+              </td>
+            </tr>
+            <tr
+              data-testid="consent-entry"
+            >
+              <td>
+                user4
+              </td>
+              <td>
+                user4@email.com
+              </td>
+              <td>
+                <p />
+                <p>
+                  Global.consents.ads
+                </p>
                 <p />
               </td>
             </tr>
@@ -131,10 +150,22 @@ exports[`<App /> should change page when user clicks on paginator 1`] = `
             </li>
             <li>
               <button
+                aria-label="Go to page 3"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                3
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
                 aria-label="Go to next page"
-                class="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular Mui-disabled MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
-                disabled=""
-                tabindex="-1"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
                 type="button"
               >
                 <svg
@@ -148,6 +179,9 @@ exports[`<App /> should change page when user clicks on paginator 1`] = `
                     d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
                   />
                 </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
               </button>
             </li>
           </ul>
@@ -308,6 +342,19 @@ exports[`<App /> should render list of consents with 2 entries by default 1`] = 
                 type="button"
               >
                 2
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to page 3"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                3
                 <span
                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
