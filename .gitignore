@@ -1,12 +1,12 @@
-# testing
+## testing
 /coverage
 /packages/**/coverage
 
-# production
+## production
 /packages/**/build
 /packages/**/dist
 
-# dependencies
+## dependencies
 .yarn/*
 !.yarn/cache
 !.yarn/patches
@@ -15,15 +15,15 @@
 !.yarn/sdks
 !.yarn/versions
 
-# misc
+## misc
 .DS_Store
 
-# log files
+## log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# IDE - VSCode
+## IDE - VSCode
 .idea
 .vscode/*
 !.vscode/settings.json
@@ -31,5 +31,5 @@ yarn-error.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# E2E tests:
-# TBD
+## Linters
+.eslintcache

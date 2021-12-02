@@ -29,6 +29,7 @@ export function AddConsent(): JSX.Element {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const setConsentList = useSetRecoilState(ConsentListState);
 
   const areConsentsValid = () => {
