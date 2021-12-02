@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should change page when user clicks on paginator 1`] = `
+<main>
+  <nav
+    class="site-header"
+  >
+    <h2>
+      Consents App
+    </h2>
+  </nav>
+  <article
+    class="layout"
+  >
+    <aside
+      class="layout__links"
+    >
+      <a
+        class=""
+        href="/"
+      >
+        Global.headers.addConsent
+      </a>
+      <a
+        aria-current="page"
+        class="active"
+        href="/list-consent"
+      >
+        Global.headers.listConsent
+      </a>
+    </aside>
+    <section
+      class="layout__screens"
+    >
+      <article
+        class="list-consent"
+      >
+        <h2>
+          ListConsent.header
+        </h2>
+        <table
+          class="ca-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                ListConsent.table.headers.username
+              </th>
+              <th>
+                ListConsent.table.headers.email
+              </th>
+              <th>
+                ListConsent.table.headers.consent
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              data-testid="consent-entry"
+            >
+              <td>
+                user3
+              </td>
+              <td>
+                user3@email.com
+              </td>
+              <td>
+                <p />
+                <p />
+                <p />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <nav
+          aria-label="pagination navigation"
+          class="MuiPagination-root MuiPagination-outlined css-1oj2twp-MuiPagination-root"
+        >
+          <ul
+            class="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+          >
+            <li>
+              <button
+                aria-label="Go to previous page"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateBeforeIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to page 1"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                1
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-current="true"
+                aria-label="page 2"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular Mui-selected MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                2
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to next page"
+                class="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular Mui-disabled MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateNextIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  </article>
+  <div
+    class="Toastify"
+  />
+</main>
+`;
+
+exports[`<App /> should render list of consents with 2 entries by default 1`] = `
+<main>
+  <nav
+    class="site-header"
+  >
+    <h2>
+      Consents App
+    </h2>
+  </nav>
+  <article
+    class="layout"
+  >
+    <aside
+      class="layout__links"
+    >
+      <a
+        class=""
+        href="/"
+      >
+        Global.headers.addConsent
+      </a>
+      <a
+        aria-current="page"
+        class="active"
+        href="/list-consent"
+      >
+        Global.headers.listConsent
+      </a>
+    </aside>
+    <section
+      class="layout__screens"
+    >
+      <article
+        class="list-consent"
+      >
+        <h2>
+          ListConsent.header
+        </h2>
+        <table
+          class="ca-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                ListConsent.table.headers.username
+              </th>
+              <th>
+                ListConsent.table.headers.email
+              </th>
+              <th>
+                ListConsent.table.headers.consent
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              data-testid="consent-entry"
+            >
+              <td>
+                user1
+              </td>
+              <td>
+                user1@email.com
+              </td>
+              <td>
+                <p>
+                  Global.consents.newsletter
+                </p>
+                <p />
+                <p>
+                  Global.consents.statistics
+                </p>
+              </td>
+            </tr>
+            <tr
+              data-testid="consent-entry"
+            >
+              <td>
+                user2
+              </td>
+              <td>
+                user2@email.com
+              </td>
+              <td>
+                <p>
+                  Global.consents.newsletter
+                </p>
+                <p>
+                  Global.consents.ads
+                </p>
+                <p>
+                  Global.consents.statistics
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <nav
+          aria-label="pagination navigation"
+          class="MuiPagination-root MuiPagination-outlined css-1oj2twp-MuiPagination-root"
+        >
+          <ul
+            class="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+          >
+            <li>
+              <button
+                aria-label="Go to previous page"
+                class="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular Mui-disabled MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateBeforeIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button
+                aria-current="true"
+                aria-label="page 1"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular Mui-selected MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                1
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to page 2"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-page css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                2
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to next page"
+                class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-circular MuiPaginationItem-previousNext css-lqq3n7-MuiButtonBase-root-MuiPaginationItem-root"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateNextIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  </article>
+  <div
+    class="Toastify"
+  />
+</main>
+`;

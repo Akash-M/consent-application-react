@@ -1,0 +1,35 @@
+name: ui-consents
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/ui-consents.yaml'
+      - 'packages/frontend/ui-consents/**'
+      - 'packages/frontend/lib-api/**'
+      - 'packages/frontend/lib-components/**'
+      - 'packages/frontend/lib-utils/**'
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/ui-consents.yaml'
+      - 'packages/frontend/ui-consents/**'
+      - 'packages/frontend/lib-api/**'
+      - 'packages/frontend/lib-components/**'
+      - 'packages/frontend/lib-utils/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn install
+      - name: Run linter
+        run: yarn workspace ui-consents lint
+      - name: Run test:unit
+        run: yarn workspace ui-consents test:unit
+      - name: Run build
+        run: yarn workspace lib-components build

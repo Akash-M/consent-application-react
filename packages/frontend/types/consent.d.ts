@@ -1,6 +1,5 @@
 declare namespace Consent {
-  export interface Detail {
-    consentUuid: string;
+  export interface NewEntry {
     username: string;
     email: string;
     consent: {
@@ -8,5 +7,9 @@ declare namespace Consent {
       ads: boolean;
       statistics: boolean;
     }
+  }
+
+  export interface Detail extends NewEntry {
+    consentUuid: string;
   }
 }

@@ -1,0 +1,14 @@
+header: Give consent
+username: Name
+email: Email Address
+consents:
+  newsletter: Receive newsletter
+  ads: Be shown targeted ads
+  statistics: Contribute to anonymous visit statistics
+disclaimer: 'I agree to:'
+addButton: Give consent
+errors:
+  username: Please enter a valid name
+  email: Please enter a valid email id
+  consents: Please ensure that you agree to at least one consent
+success: Consent added successfully
