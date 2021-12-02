@@ -1,0 +1,13 @@
+header: Collected consents
+table:
+  headers:
+    username: Name
+    email: Email Address
+    consent: Consent given for
+  pagination:
+    previous: Previous Page
+    next: Next Page
+consents:
+  newsletter: Receive newsletter
+  ads: Be shown targeted ads
+  statistics: Contribute to anonymous visit statistics

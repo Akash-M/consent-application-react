@@ -1,0 +1,7 @@
+headers:
+  addConsent: Give consent
+  listConsent: Collected consents
+consents:
+  newsletter: Receive newsletter
+  ads: Be shown targeted ads
+  statistics: Contribute to anonymous visit statistics

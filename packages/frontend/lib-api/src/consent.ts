@@ -5,7 +5,7 @@ export async function getConsents(): Promise<Consent.Detail[]> {
 }
 
 export async function postConsent(
-  consent: Consent.Detail,
+  consent: Consent.NewEntry,
 ): Promise<Consent.Detail> {
   return await appCatalogApi.post(`/consents`, { consent });
 }

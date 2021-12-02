@@ -12,7 +12,6 @@ import { toast } from 'react-toastify';
 import { useSetRecoilState } from 'recoil';
 
 import { ConsentListState } from '$/store/consents/atoms';
-import { ConsentEntry } from '$/types/consent';
 import './AddConsent.scss';
 
 const EmailRegex = /^\S+@\S+$/i;
@@ -20,7 +19,7 @@ const EmailRegex = /^\S+@\S+$/i;
 export function AddConsent(): JSX.Element {
   const { t } = useTranslation(['Global', 'AddConsent']);
 
-  const [formData, setFormData] = useState<ConsentEntry>({
+  const [formData, setFormData] = useState<Consent.NewEntry>({
     username: '',
     email: '',
     consent: {
@@ -60,7 +59,8 @@ export function AddConsent(): JSX.Element {
   };
 
   const postConsent = () => {
-    setConsentList((oldConsentList) => [formData, ...oldConsentList]);
+    // TODO: make api call and update store.
+    // setConsentList((oldConsentList) => [formData, ...oldConsentList]);
     toast.success(t('AddConsent.success'), {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
