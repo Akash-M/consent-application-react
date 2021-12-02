@@ -1,0 +1,43 @@
+.ca-table {
+  background-color: $ca-white;
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: 0 0 4px $ca-box-shadow;
+  display: table;
+  overflow-x: auto;
+  padding-left: 16px;
+  padding-right: pxToRem(16);
+  width: 100%;
+
+  td,
+  th {
+    border: none;
+    box-shadow: 0 1px 0 0 $ca-copy;
+    color: $ca-copy;
+    padding: pxToRem(16);
+  }
+
+  th {
+    color: $ca-copy;
+    font-size: pxToRem(14);
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  td {
+    font-size: pxToRem(16);
+    font-weight: 400;
+  }
+
+  tbody {
+    tr:hover {
+      background: $ca-copy;
+      cursor: pointer;
+    }
+
+    > tr:last-child {
+      box-shadow: none;
+    }
+  }
+}
