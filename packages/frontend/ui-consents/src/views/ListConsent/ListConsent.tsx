@@ -1,12 +1,11 @@
 import Pagination from '@mui/material/Pagination';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
-import { getConsents } from 'lib-api/src/consent';
+import { getConsents, getConsentsCount } from 'lib-api/src/consent';
 
-import { ConsentListPaginatorState, ConsentListState } from '$/store/consents/atoms';
-import { ConsentListSelector } from '$/store/consents/selectors';
+import { ConsentListPaginatorState } from '$/store/consents/atoms';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
@@ -14,28 +13,28 @@ export function ListConsent(): JSX.Element {
 
   const tableHeaders: Record<string, string[]> = t('ListConsent.table.headers');
 
-  const [consentList, setConsentList] = useRecoilState(ConsentListState);
-  // const visibleConsentList = useRecoilState(ConsentListSelector);
-  const consentListPaginator = useRecoilValue(ConsentListPaginatorState);
-  const setConsentListPaginator = useSetRecoilState(ConsentListPaginatorState);
+  const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
+  const [consentsCount, setConsentsCount] = useState(0);
+  const [visibleConsentList, setVisibleConsentList] = useState<Consent.Detail[]>([]);
 
   const handlePageChange = (
     event: React.BaseSyntheticEvent,
     newPage: number,
   ) => {
-    setConsentListPaginator((oldPaginator) => ({
+    setPaginator((oldPaginator) => ({
       ...oldPaginator,
       currentPage: newPage,
     }));
   };
 
   const fetchConsentList = async () => {
-    setConsentList(await getConsents());
+    setConsentsCount(await getConsentsCount());
+    setVisibleConsentList(await getConsents(paginator));
   };
 
   useEffect(() => {
     void fetchConsentList();
-  }, []);
+  }, [paginator]);
 
   return (
     <article className="list-consent">
@@ -51,7 +50,7 @@ export function ListConsent(): JSX.Element {
         </thead>
 
         <tbody>
-          {consentList.map((consent: Consent.Detail) => {
+          {visibleConsentList.map((consent: Consent.Detail) => {
             return (
               <tr key={consent.consentUuid} data-testid="consent-entry">
                 <td>{consent.username}</td>
@@ -76,7 +75,8 @@ export function ListConsent(): JSX.Element {
       </table>
 
       <Pagination
-        count={consentListPaginator.perPage}
+        count={Math.round(consentsCount/paginator.perPage)}
+        page={paginator.currentPage}
         variant="outlined"
         onChange={handlePageChange}
       />

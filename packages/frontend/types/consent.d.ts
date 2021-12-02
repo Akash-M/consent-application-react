@@ -12,4 +12,9 @@ declare namespace Consent {
   export interface Detail extends NewEntry {
     consentUuid: string;
   }
+
+  export interface Paginator {
+    perPage: number;
+    currentPage: number;
+  }
 }

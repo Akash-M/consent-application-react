@@ -1,16 +1,12 @@
 import { atom } from 'recoil';
 
 export const ConsentListState = atom<Consent.Detail[]>({
-  key: 'ConsentList',
+  key: 'ConsentListState',
   default: [],
 });
 
-export interface ConsentListPaginator {
-  perPage: number;
-  currentPage: number;
-}
-export const ConsentListPaginatorState = atom<ConsentListPaginator>({
-  key: 'ConsentListPaginator',
+export const ConsentListPaginatorState = atom<Consent.Paginator>({
+  key: 'ConsentListPaginatorState',
   default: {
     currentPage: 1,
     perPage: 2,

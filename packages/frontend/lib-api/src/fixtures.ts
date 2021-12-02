@@ -24,7 +24,7 @@ export const consentListFixtures: Consent.Detail[] = [
     username: 'user3',
     email: 'user3@email.com',
     consent: {
-      newsletter: false,
+      newsletter: true,
       ads: false,
       statistics: false,
     },
@@ -35,7 +35,7 @@ export const consentListFixtures: Consent.Detail[] = [
     email: 'user4@email.com',
     consent: {
       newsletter: false,
-      ads: false,
+      ads: true,
       statistics: false,
     },
   },
@@ -46,7 +46,7 @@ export const consentListFixtures: Consent.Detail[] = [
     consent: {
       newsletter: false,
       ads: false,
-      statistics: false,
+      statistics: true,
     },
   },
 ];
