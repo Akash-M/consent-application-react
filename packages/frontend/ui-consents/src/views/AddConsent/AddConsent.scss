@@ -1,0 +1,56 @@
+.add-consent {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  @include tablet {
+    width: auto;
+  }
+
+  @include desktop {
+    margin: 0;
+    max-width: 1024px;
+    width: auto;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    .text-field {
+      height: 40px;
+    }
+
+    .text-field:first-child {
+      margin-bottom: 1rem;
+    }
+
+    @include tablet {
+      flex-direction: row;
+
+      .text-field {
+        min-width: 250px;
+      }
+
+      .text-field:first-child {
+        margin-bottom: 0;
+      }
+
+      .text-field:last-child {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__consents {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  > button {
+    align-self: flex-start;
+    width: fit-content;
+  }
+}
