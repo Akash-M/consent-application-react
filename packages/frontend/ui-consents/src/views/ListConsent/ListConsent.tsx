@@ -1,9 +1,11 @@
 import Pagination from '@mui/material/Pagination';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
-import { ConsentListPaginatorState } from '$/store/consents/atoms';
+import { getConsents } from 'lib-api/src/consent';
+
+import { ConsentListPaginatorState, ConsentListState } from '$/store/consents/atoms';
 import { ConsentListSelector } from '$/store/consents/selectors';
 import './ListConsent.scss';
 
@@ -12,7 +14,8 @@ export function ListConsent(): JSX.Element {
 
   const tableHeaders: Record<string, string[]> = t('ListConsent.table.headers');
 
-  const consentList = useRecoilValue(ConsentListSelector);
+  const [consentList, setConsentList] = useRecoilState(ConsentListState);
+  // const visibleConsentList = useRecoilState(ConsentListSelector);
   const consentListPaginator = useRecoilValue(ConsentListPaginatorState);
   const setConsentListPaginator = useSetRecoilState(ConsentListPaginatorState);
 
@@ -25,6 +28,14 @@ export function ListConsent(): JSX.Element {
       currentPage: newPage,
     }));
   };
+
+  const fetchConsentList = async () => {
+    setConsentList(await getConsents());
+  };
+
+  useEffect(() => {
+    void fetchConsentList();
+  }, []);
 
   return (
     <article className="list-consent">
@@ -40,9 +51,9 @@ export function ListConsent(): JSX.Element {
         </thead>
 
         <tbody>
-          {consentList.map((consent, index) => {
+          {consentList.map((consent: Consent.Detail) => {
             return (
-              <tr key={index} data-testid="consent-entry">
+              <tr key={consent.consentUuid} data-testid="consent-entry">
                 <td>{consent.username}</td>
 
                 <td>{consent.email}</td>

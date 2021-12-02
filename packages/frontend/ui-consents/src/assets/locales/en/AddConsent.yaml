@@ -11,4 +11,5 @@ errors:
   username: Please enter a valid name
   email: Please enter a valid email id
   consents: Please ensure that you agree to at least one consent
+  api: Error adding new consent. Please try again.
 success: Consent added successfully

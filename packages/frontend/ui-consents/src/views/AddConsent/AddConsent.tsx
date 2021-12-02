@@ -11,6 +11,8 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { useSetRecoilState } from 'recoil';
 
+import { postConsent } from 'lib-api/src/consent';
+
 import { ConsentListState } from '$/store/consents/atoms';
 import './AddConsent.scss';
 
@@ -59,12 +61,18 @@ export function AddConsent(): JSX.Element {
     );
   };
 
-  const postConsent = () => {
-    // TODO: make api call and update store.
-    // setConsentList((oldConsentList) => [formData, ...oldConsentList]);
-    toast.success(t('AddConsent.success'), {
-      position: toast.POSITION.BOTTOM_RIGHT,
-    });
+  const addConsent = async () => {
+    try {
+      const response = await postConsent(formData);
+      setConsentList((oldConsentList) => [response, ...oldConsentList]);
+      toast.success(t('AddConsent.success'), {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    } catch {
+      toast.error(t('AddConsent.errors.api'), {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    }
   };
 
   return (
@@ -150,7 +158,7 @@ export function AddConsent(): JSX.Element {
       <Button
         disabled={isDisabled()}
         variant="contained"
-        onClick={() => postConsent()}
+        onClick={() => addConsent()}
       >
         {t('AddConsent.addButton')}
       </Button>
