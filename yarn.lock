@@ -5,12 +5,6 @@ __metadata:
   version: 4
   cacheKey: 8
 
-"#@link:./test::locator=lib-api%40workspace%3Apackages%2Ffrontend%2Flib-api":
-  version: 0.0.0-use.local
-  resolution: "#@link:./test::locator=lib-api%40workspace%3Apackages%2Ffrontend%2Flib-api"
-  languageName: node
-  linkType: soft
-
 "#@link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components":
   version: 0.0.0-use.local
   resolution: "#@link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"
@@ -5996,6 +5990,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^8.3.3":
+  version: 8.3.3
+  resolution: "@types/uuid@npm:8.3.3"
+  checksum: 3f340155bb1161f9ffa7163926d6222fea8f3505c23619b72bcc230883354926672c08a06510c7a543f73553c792a84444cc1744cff631b4ba988763e4bd7a8f
+  languageName: node
+  linkType: hard
+
 "@types/vfile-message@npm:*":
   version: 1.0.1
   resolution: "@types/vfile-message@npm:1.0.1"
@@ -7715,15 +7716,6 @@ __metadata:
   version: 4.1.4
   resolution: "axe-core@npm:4.1.4"
   checksum: eca4c5396a572f87661969bcd74add0ce2f32e13ba5cbe84cea313b82fb881d8f7f803f95a51e7f0e6867a72c57d8e60717fff045c5524652cd982ca7b071344
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.21.4":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
-  dependencies:
-    follow-redirects: ^1.14.0
-  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
   languageName: node
   linkType: hard
 
@@ -12550,7 +12542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.0.0":
   version: 1.14.5
   resolution: "follow-redirects@npm:1.14.5"
   peerDependenciesMeta:
@@ -17061,7 +17053,6 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "lib-api@workspace:packages/frontend/lib-api"
   dependencies:
-    "#": "link:./test"
     $: "link:./src"
     "@babel/core": ^7.15.8
     "@babel/plugin-proposal-class-properties": ^7.14.5
@@ -17070,28 +17061,20 @@ fsevents@^1.2.7:
     "@babel/preset-react": ^7.14.5
     "@babel/preset-typescript": ^7.15.0
     "@babel/runtime": ^7.15.4
-    "@types/jest": ^26.0.24
     "@types/node": ^14.17.19
+    "@types/uuid": ^8.3.3
     "@typescript-eslint/eslint-plugin": ^4.29.3
     "@typescript-eslint/parser": ^4.29.3
-    axios: ^0.21.4
     consent-app-react: "workspace:*"
     eslint: ^7.32.0
     eslint-config-prettier: ^7.2.0
-    eslint-config-react-app: ^6.0.0
     eslint-plugin-flowtype: ^5.10.0
-    eslint-plugin-import: ^2.24.2
     eslint-plugin-jest: ^24.5.2
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-prettier: ^3.4.1
-    eslint-plugin-react: ^7.26.1
-    eslint-plugin-react-hooks: ^4.2.0
-    eslint-plugin-testing-library: ^4.12.4
-    jest: ^27.0.6
     prettier: ^2.3.2
     typescript: ^4.3.5
-  peerDependencies:
-    axios: "*"
+    uuid: ^8.3.2
   languageName: unknown
   linkType: soft
 
@@ -25513,6 +25496,15 @@ typescript@^4.3.5:
   bin:
     uuid: ./bin/uuid
   checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
   languageName: node
   linkType: hard
 
