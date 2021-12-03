@@ -205,7 +205,7 @@ export function ListConsentTable(): JSX.Element {
                 count={consentList.length}
                 page={paginator.currentPage}
                 rowsPerPage={paginator.perPage}
-                rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                rowsPerPageOptions={[2, 5, { label: 'All', value: -1 }]}
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
               />
