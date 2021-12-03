@@ -1,1 +1,1 @@
-export { ListConsentTable as default } from '$/components/list-consent/ListConsentTable/ListConsentTable';
+export { ListConsentTable as default } from './ListConsentTable';

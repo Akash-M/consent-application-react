@@ -1,1 +1,1 @@
-export { AddConsent as default } from '$/views/AddConsent/AddConsent';
+export { AddConsent as default } from './AddConsent';

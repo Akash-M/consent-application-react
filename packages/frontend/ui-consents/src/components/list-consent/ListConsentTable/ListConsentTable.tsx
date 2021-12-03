@@ -2,18 +2,15 @@ import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
-import TableFooter from '@mui/material/TableFooter';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 import { StyledTableCell } from 'lib-components/src/components/table/StyledTableCell';
 import { StyledTableRow } from 'lib-components/src/components/table/StyledTableRow';
-import { TablePaginationActions } from 'lib-components/src/components/table/TablePaginationActions';
 
+import ListConsentTableFooter from '$/components/list-consent/ListConsentTableFooter';
+import ListConsentTableHeader from '$/components/list-consent/ListConsentTableHeader';
 import {
   ConsentListPaginatorState,
   ConsentListState,
@@ -23,34 +20,14 @@ import './ListConsentTable.scss';
 export function ListConsentTable(): JSX.Element {
   const { t } = useTranslation();
 
-  const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
+  const paginator = useRecoilValue(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
-
-  const handleChangePage = (event: any, newPage: number) => {
-    setPaginator((oldPaginator) => ({
-      ...oldPaginator,
-      currentPage: newPage,
-    }));
-  };
-
-  const handleChangeRowsPerPage = (event: React.BaseSyntheticEvent) => {
-    setPaginator(() => ({
-      currentPage: 0,
-      perPage: Number.parseInt(event.target.value, 10),
-    }));
-  };
 
   return (
     <section className="list-consent-table">
       <TableContainer component={Paper}>
         <Table aria-label="simple table" sx={{ minWidth: 650 }}>
-          <TableHead>
-            <TableRow>
-              {Object.keys(t('ListConsent.table.headers')).map((header) => {
-                return <StyledTableCell key={header}>{header}</StyledTableCell>;
-              })}
-            </TableRow>
-          </TableHead>
+          <ListConsentTableHeader />
 
           <TableBody>
             {(paginator.perPage > 0
@@ -82,27 +59,7 @@ export function ListConsentTable(): JSX.Element {
             ))}
           </TableBody>
 
-          <TableFooter>
-            <TableRow>
-              <TablePagination
-                ActionsComponent={TablePaginationActions}
-                SelectProps={{
-                  inputProps: {
-                    'aria-label': 'rows per page',
-                  },
-                  native: true,
-                }}
-                colSpan={3}
-                count={consentList.length}
-                id="consent-list-paginator"
-                page={paginator.currentPage}
-                rowsPerPage={paginator.perPage}
-                rowsPerPageOptions={[2, 5, { label: 'All', value: -1 }]}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-              />
-            </TableRow>
-          </TableFooter>
+          <ListConsentTableFooter />
         </Table>
       </TableContainer>
     </section>
