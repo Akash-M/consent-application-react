@@ -8,7 +8,7 @@ export const ConsentListState = atom<Consent.Detail[]>({
 export const ConsentListPaginatorState = atom<Consent.Paginator>({
   key: 'ConsentListPaginatorState',
   default: {
-    currentPage: 1,
+    currentPage: 0,
     perPage: 2,
   },
 });

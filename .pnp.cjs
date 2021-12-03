@@ -6132,6 +6132,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@mui/icons-material", [
+        ["npm:5.2.0", {
+          "packageLocation": "./.yarn/cache/@mui-icons-material-npm-5.2.0-daa6536770-02b5eeec1c.zip/node_modules/@mui/icons-material/",
+          "packageDependencies": [
+            ["@mui/icons-material", "npm:5.2.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.0", {
+          "packageLocation": "./.yarn/__virtual__/@mui-icons-material-virtual-97e2a506fe/0/cache/@mui-icons-material-npm-5.2.0-daa6536770-02b5eeec1c.zip/node_modules/@mui/icons-material/",
+          "packageDependencies": [
+            ["@mui/icons-material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.0"],
+            ["@babel/runtime", "npm:7.16.3"],
+            ["@mui/material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.1.1"],
+            ["@types/mui__material", null],
+            ["@types/react", "npm:17.0.35"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@mui/material",
+            "@types/mui__material",
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@mui/material", [
         ["npm:5.1.1", {
           "packageLocation": "./.yarn/cache/@mui-material-npm-5.1.1-46441b85a8-ef735e17ca.zip/node_modules/@mui/material/",
@@ -33285,6 +33312,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.16.3"],
             ["@emotion/react", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:11.6.0"],
             ["@emotion/styled", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:11.6.0"],
+            ["@mui/icons-material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.0"],
             ["@mui/material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.1.1"],
             ["@svgr/webpack", "npm:5.5.0"],
             ["@testing-library/dom", "npm:7.31.2"],

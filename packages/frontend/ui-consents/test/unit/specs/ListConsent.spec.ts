@@ -38,7 +38,7 @@ describe('<App />', () => {
     await waitFor(() => {
       expect(screen.getByText('user1@email.com')).toBeTruthy();
     });
-    fireEvent.click(screen.getByText('2'));
+    fireEvent.click(screen.getByLabelText(/next page/i));
     await waitFor(() => {
       expect(screen.getByText('user3@email.com')).toBeTruthy();
     });
