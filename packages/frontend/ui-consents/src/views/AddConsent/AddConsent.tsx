@@ -16,10 +16,13 @@ import { postConsent } from 'lib-api/src/consent';
 import { ConsentListState } from '$/store/consents/atoms';
 import './AddConsent.scss';
 
+// TODO: move to lib-utils
 const EmailRegex = /^\S+@\S+$/i;
 
 export function AddConsent(): JSX.Element {
   const { t } = useTranslation(['Global', 'AddConsent']);
+
+  const setConsentList = useSetRecoilState(ConsentListState);
 
   const [formData, setFormData] = useState<Consent.NewEntry>({
     username: '',
@@ -30,15 +33,13 @@ export function AddConsent(): JSX.Element {
       statistics: false,
     },
   });
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const setConsentList = useSetRecoilState(ConsentListState);
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const areConsentsValid = () => {
     return (
-      !formData.consent.newsletter &&
-      !formData.consent.ads &&
-      !formData.consent.statistics
+      formData.consent.newsletter ||
+      formData.consent.ads ||
+      formData.consent.statistics
     );
   };
 
@@ -53,25 +54,32 @@ export function AddConsent(): JSX.Element {
     });
   };
 
-  const isDisabled = () => {
-    return (
-      formData.username.length === 0 ||
-      !EmailRegex.test(formData.email) ||
+  const validateForm = () => {
+    if (
+      formData.username.length > 0 &&
+      EmailRegex.test(formData.email) &&
       areConsentsValid()
-    );
+    ) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
   };
 
-  const addConsent = async () => {
-    try {
-      const response = await postConsent(formData);
-      setConsentList((oldConsentList) => [response, ...oldConsentList]);
-      toast.success(t('AddConsent.success'), {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
-    } catch {
-      toast.error(t('AddConsent.errors.api'), {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
+  const handleSubmit = async (e: React.BaseSyntheticEvent) => {
+    e.preventDefault();
+    if (isFormValid) {
+      try {
+        const response = await postConsent(formData);
+        setConsentList((oldConsentList) => [response, ...oldConsentList]);
+        toast.success(t('AddConsent.success'), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        });
+      } catch {
+        toast.error(t('AddConsent.errors.api'), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        });
+      }
     }
   };
 
@@ -79,89 +87,91 @@ export function AddConsent(): JSX.Element {
     <article className="add-consent">
       <h2>{t('AddConsent.header')}</h2>
 
-      <section className="add-consent__user-info">
-        <TextField
-          required
-          className="text-field"
-          defaultValue={formData.username}
-          error={formData.username.length === 0}
-          label={t('AddConsent.username')}
-          name="username"
-          variant="standard"
-          onChange={(e) =>
-            setFormData({ ...formData, username: e.target.value })
-          }
-        />
+      <form onSubmit={handleSubmit}>
+        <section className="add-consent__user-info">
+          <TextField
+            required
+            className="text-field"
+            defaultValue={formData.username}
+            error={!isFormValid && formData.username.length === 0}
+            label={t('AddConsent.username')}
+            name="username"
+            variant="standard"
+            onChange={(e) =>
+              setFormData({ ...formData, username: e.target.value })
+            }
+          />
 
-        <TextField
-          required
-          className="text-field"
-          defaultValue={formData.email}
-          error={!EmailRegex.test(formData.email)}
-          label={t('AddConsent.email')}
-          name="email"
-          variant="standard"
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-      </section>
+          <TextField
+            required
+            className="text-field"
+            defaultValue={formData.email}
+            error={!isFormValid && !EmailRegex.test(formData.email)}
+            label={t('AddConsent.email')}
+            name="email"
+            variant="standard"
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+          />
+        </section>
 
-      <section className="add-consent__consents">
-        <FormControl
-          required
-          component="fieldset"
-          error={areConsentsValid()}
-          variant="standard"
-        >
-          <FormLabel component="legend">{t('AddConsent.disclaimer')}</FormLabel>
+        <section className="add-consent__consents">
+          <FormControl
+            required
+            component="fieldset"
+            error={!isFormValid && !areConsentsValid()}
+            variant="standard"
+          >
+            <FormLabel component="legend">
+              {t('AddConsent.disclaimer')}
+            </FormLabel>
 
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={formData.consent.newsletter}
-                  name="newsletter"
-                  onChange={updateConsent}
-                />
-              }
-              label={t<string>('Global.consents.newsletter')}
-            />
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={formData.consent.newsletter}
+                    name="newsletter"
+                    onChange={updateConsent}
+                  />
+                }
+                label={t<string>('Global.consents.newsletter')}
+              />
 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={formData.consent.ads}
-                  name="ads"
-                  onChange={updateConsent}
-                />
-              }
-              label={t<string>('Global.consents.ads')}
-            />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={formData.consent.ads}
+                    name="ads"
+                    onChange={updateConsent}
+                  />
+                }
+                label={t<string>('Global.consents.ads')}
+              />
 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={formData.consent.statistics}
-                  name="statistics"
-                  onChange={updateConsent}
-                />
-              }
-              label={t<string>('Global.consents.statistics')}
-            />
-          </FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={formData.consent.statistics}
+                    name="statistics"
+                    onChange={updateConsent}
+                  />
+                }
+                label={t<string>('Global.consents.statistics')}
+              />
+            </FormGroup>
 
-          {areConsentsValid() && (
-            <FormHelperText>{t('AddConsent.errors.consents')}</FormHelperText>
-          )}
-        </FormControl>
-      </section>
+            {!isFormValid && (
+              <FormHelperText>{t('AddConsent.errors.consents')}</FormHelperText>
+            )}
+          </FormControl>
+        </section>
 
-      <Button
-        disabled={isDisabled()}
-        variant="contained"
-        onClick={() => addConsent()}
-      >
-        {t('AddConsent.addButton')}
-      </Button>
+        <Button type="submit" variant="contained" onClick={validateForm}>
+          {t('AddConsent.addButton')}
+        </Button>
+      </form>
     </article>
   );
 }

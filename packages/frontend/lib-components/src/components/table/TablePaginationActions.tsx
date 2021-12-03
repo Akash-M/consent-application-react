@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
 
+// TODO: pass translations.
 export const TablePaginationActions = (props: {
   count: number;
   page: number;
