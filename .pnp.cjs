@@ -6329,35 +6329,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["npm:5.2.2", {
-          "packageLocation": "./.yarn/cache/@mui-utils-npm-5.2.2-fc4dd50cad-93b814e35d.zip/node_modules/@mui/utils/",
-          "packageDependencies": [
-            ["@mui/utils", "npm:5.2.2"]
-          ],
-          "linkType": "SOFT",
-        }],
         ["virtual:6cb61add7c6f2a20f900324609a0a3a100fb68d2d0c304db2e5980a10b494a2590c15a4b96bd0dddab6d18b6517d185da31a345d5a02cc97a30457e6c936140b#npm:5.1.1", {
           "packageLocation": "./.yarn/__virtual__/@mui-utils-virtual-5e9de9a1c9/0/cache/@mui-utils-npm-5.1.1-1d4e23b3a0-cebbd4e9e5.zip/node_modules/@mui/utils/",
           "packageDependencies": [
             ["@mui/utils", "virtual:6cb61add7c6f2a20f900324609a0a3a100fb68d2d0c304db2e5980a10b494a2590c15a4b96bd0dddab6d18b6517d185da31a345d5a02cc97a30457e6c936140b#npm:5.1.1"],
-            ["@babel/runtime", "npm:7.16.3"],
-            ["@types/prop-types", "npm:15.7.4"],
-            ["@types/react", "npm:17.0.35"],
-            ["@types/react-is", "npm:17.0.3"],
-            ["prop-types", "npm:15.7.2"],
-            ["react", "npm:17.0.2"],
-            ["react-is", "npm:17.0.2"]
-          ],
-          "packagePeers": [
-            "@types/react",
-            "react"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2", {
-          "packageLocation": "./.yarn/__virtual__/@mui-utils-virtual-935529dfe0/0/cache/@mui-utils-npm-5.2.2-fc4dd50cad-93b814e35d.zip/node_modules/@mui/utils/",
-          "packageDependencies": [
-            ["@mui/utils", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2"],
             ["@babel/runtime", "npm:7.16.3"],
             ["@types/prop-types", "npm:15.7.4"],
             ["@types/react", "npm:17.0.35"],
@@ -33338,7 +33313,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:11.6.0"],
             ["@mui/icons-material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.0"],
             ["@mui/material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.1.1"],
-            ["@mui/utils", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2"],
             ["@svgr/webpack", "npm:5.5.0"],
             ["@testing-library/dom", "npm:7.31.2"],
             ["@testing-library/jest-dom", "npm:5.15.0"],
