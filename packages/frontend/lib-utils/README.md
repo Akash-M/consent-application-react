@@ -2,7 +2,7 @@
 
 Library of utility files relevant for the consent app.
 
-[![lib-utils](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-utils.yaml/badge.svg)](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-utils.yaml)
+[![lib-utils](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml)
 
 ### Testing philosophy
 

@@ -2,7 +2,7 @@
 
 Consent app written using React 17 with hooks and Typescript.
 
-[![ui-consents](https://github.com/Akash-M/consent-app-react/actions/workflows/ui-consents.yaml/badge.svg)](https://github.com/Akash-M/consent-app-react/actions/workflows/ui-consents.yaml)
+[![ui-consents](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml)
 
 ## Scripts
 

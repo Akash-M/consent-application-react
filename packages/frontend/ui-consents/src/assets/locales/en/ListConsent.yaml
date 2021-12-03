@@ -7,7 +7,5 @@ table:
   pagination:
     previous: Previous Page
     next: Next Page
-consents:
-  newsletter: Receive newsletter
-  ads: Be shown targeted ads
-  statistics: Contribute to anonymous visit statistics
+errors:
+  api: Error fetching consent list. Please try again in some time.

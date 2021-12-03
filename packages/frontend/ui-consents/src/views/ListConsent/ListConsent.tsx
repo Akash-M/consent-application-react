@@ -1,74 +1,42 @@
-import Pagination from '@mui/material/Pagination';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { toast } from 'react-toastify';
+import { useSetRecoilState } from 'recoil';
 
-import { ConsentListPaginatorState } from '$/store/consents/atoms';
-import { ConsentListSelector } from '$/store/consents/selectors';
+import { getConsents } from 'lib-api/src/consent';
+
+import ListConsentTable from '$/components/list-consent/ListConsentTable';
+import { ConsentListState } from '$/store/consents/atoms';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
   const { t } = useTranslation(['Global', 'ListConsent']);
 
-  const tableHeaders: Record<string, string[]> = t('ListConsent.table.headers');
+  const setConsentList = useSetRecoilState(ConsentListState);
+  const [loading, setLoading] = useState(false);
 
-  const consentList = useRecoilValue(ConsentListSelector);
-  const consentListPaginator = useRecoilValue(ConsentListPaginatorState);
-  const setConsentListPaginator = useSetRecoilState(ConsentListPaginatorState);
-
-  const handlePageChange = (
-    event: React.BaseSyntheticEvent,
-    newPage: number,
-  ) => {
-    setConsentListPaginator((oldPaginator) => ({
-      ...oldPaginator,
-      currentPage: newPage,
-    }));
+  const fetchConsentList = async () => {
+    setLoading(true);
+    try {
+      setConsentList(await getConsents());
+    } catch {
+      toast.error(t('AddConsent.errors.api'), {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    void fetchConsentList();
+  }, []);
 
   return (
     <article className="list-consent">
       <h2>{t('ListConsent.header')}</h2>
 
-      <table className="ca-table">
-        <thead>
-          <tr>
-            {Object.keys(tableHeaders).map((header) => {
-              return <th key={header}>{tableHeaders[header]}</th>;
-            })}
-          </tr>
-        </thead>
-
-        <tbody>
-          {consentList.map((consent, index) => {
-            return (
-              <tr key={index} data-testid="consent-entry">
-                <td>{consent.username}</td>
-
-                <td>{consent.email}</td>
-
-                <td>
-                  <p>
-                    {consent.consent.newsletter &&
-                      t('Global.consents.newsletter')}
-                  </p>
-                  <p>{consent.consent.ads && t('Global.consents.ads')}</p>
-                  <p>
-                    {consent.consent.statistics &&
-                      t('Global.consents.statistics')}
-                  </p>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-      <Pagination
-        count={consentListPaginator.perPage}
-        variant="outlined"
-        onChange={handlePageChange}
-      />
+      {loading ? <div>Loading...</div> : <ListConsentTable />}
     </article>
   );
 }
