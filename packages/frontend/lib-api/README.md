@@ -2,7 +2,7 @@
 
 Library of api calls relevant for the consent app.
 
-[![lib-api](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-api.yaml/badge.svg)](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-api.yaml)
+[![lib-api](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-api.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-api.yaml)
 
 ### Testing philosophy
 

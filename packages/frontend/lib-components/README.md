@@ -4,7 +4,7 @@ Frontend library of components. This is our custom component library for the con
 consisting of UI components without any business logic. We make use storybook to render the components to help with
 rendering the component library.
 
-[![lib-components](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-components.yaml/badge.svg)](https://github.com/Akash-M/consent-app-react/actions/workflows/lib-components.yaml)
+[![lib-components](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-components.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-components.yaml)
 
 ## How to write stories:
 
