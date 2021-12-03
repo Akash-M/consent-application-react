@@ -1,11 +1,15 @@
 import Pagination from '@mui/material/Pagination';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
-import { getConsents, getConsentsCount } from 'lib-api/src/consent';
+import { getConsents } from 'lib-api/src/consent';
 
-import { ConsentListPaginatorState } from '$/store/consents/atoms';
+import {
+  ConsentListPaginatorState,
+  ConsentListState,
+} from '$/store/consents/atoms';
+import { ConsentListSelector } from '$/store/consents/selectors';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
@@ -14,10 +18,8 @@ export function ListConsent(): JSX.Element {
   const tableHeaders: Record<string, string[]> = t('ListConsent.table.headers');
 
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
-  const [consentsCount, setConsentsCount] = useState(0);
-  const [visibleConsentList, setVisibleConsentList] = useState<
-    Consent.Detail[]
-  >([]);
+  const [consentList, setConsentList] = useRecoilState(ConsentListState);
+  const visibleConsentList = useRecoilValue(ConsentListSelector);
 
   const handlePageChange = (
     event: React.BaseSyntheticEvent,
@@ -30,8 +32,7 @@ export function ListConsent(): JSX.Element {
   };
 
   const fetchConsentList = async () => {
-    setConsentsCount(await getConsentsCount());
-    setVisibleConsentList(await getConsents(paginator));
+    setConsentList(await getConsents());
   };
 
   useEffect(() => {
@@ -77,7 +78,7 @@ export function ListConsent(): JSX.Element {
       </table>
 
       <Pagination
-        count={Math.round(consentsCount / paginator.perPage)}
+        count={Math.round(consentList.length / paginator.perPage)}
         page={paginator.currentPage}
         variant="outlined"
         onChange={handlePageChange}
