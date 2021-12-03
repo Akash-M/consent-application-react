@@ -10,9 +10,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
-import { StyledTableCell } from 'lib-components/src/scss/components/table/StyledTableCell';
-import { StyledTableRow } from 'lib-components/src/scss/components/table/StyledTableRow';
-import { TablePaginationActions } from 'lib-components/src/scss/components/table/TablePaginationActions';
+import { StyledTableCell } from 'lib-components/src/components/table/StyledTableCell';
+import { StyledTableRow } from 'lib-components/src/components/table/StyledTableRow';
+import { TablePaginationActions } from 'lib-components/src/components/table/TablePaginationActions';
 
 import {
   ConsentListPaginatorState,
