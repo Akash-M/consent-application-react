@@ -28,12 +28,14 @@ describe('<App />', () => {
     await waitFor(() => {
       expect(screen.getByText('user1@email.com')).toBeTruthy();
     });
+    await waitFor(() => {
+      expect(screen.getByText('user2@email.com')).toBeTruthy();
+    });
     expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('should change page when user clicks on paginator', async () => {
-    const { container } = customRenderer(App, initializeState);
+    customRenderer(App, initializeState);
     fireEvent.click(screen.getByText('Global.headers.listConsent'));
     await waitFor(() => {
       expect(screen.getByText('user1@email.com')).toBeTruthy();
@@ -42,6 +44,8 @@ describe('<App />', () => {
     await waitFor(() => {
       expect(screen.getByText('user3@email.com')).toBeTruthy();
     });
-    expect(container.firstChild).toMatchSnapshot();
+    await waitFor(() => {
+      expect(screen.getByText('user4@email.com')).toBeTruthy();
+    });
   });
 });

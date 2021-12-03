@@ -203,6 +203,7 @@ export function ListConsentTable(): JSX.Element {
                 }}
                 colSpan={3}
                 count={consentList.length}
+                id="consent-list-paginator"
                 page={paginator.currentPage}
                 rowsPerPage={paginator.perPage}
                 rowsPerPageOptions={[2, 5, { label: 'All', value: -1 }]}

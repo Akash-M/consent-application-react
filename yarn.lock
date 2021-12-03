@@ -3610,6 +3610,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/utils@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "@mui/utils@npm:5.2.2"
+  dependencies:
+    "@babel/runtime": ^7.16.3
+    "@types/prop-types": ^15.7.4
+    "@types/react-is": ^16.7.1 || ^17.0.0
+    prop-types: ^15.7.2
+    react-is: ^17.0.2
+  peerDependencies:
+    react: ^17.0.2
+  checksum: 93b814e35d8e622c7326ca4c15c41a4fda2adf3f21078d9ef77010307bf21707109d237373db9ede4a7b80269b02e313352601ab0aa4cd979bbb4b69eb89a7bd
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.4":
   version: 2.1.4
   resolution: "@nodelib/fs.scandir@npm:2.1.4"
@@ -24896,6 +24911,7 @@ typescript@^4.3.5:
     "@emotion/styled": ^11.6.0
     "@mui/icons-material": ^5.2.0
     "@mui/material": ^5.1.1
+    "@mui/utils": ^5.2.2
     "@svgr/webpack": ^5.5.0
     "@testing-library/dom": ^7.31.2
     "@testing-library/jest-dom": ^5.14.1
@@ -24919,13 +24935,11 @@ typescript@^4.3.5:
     "@types/webpack-dev-server": ^3.11.6
     "@typescript-eslint/eslint-plugin": ^4.29.3
     "@typescript-eslint/parser": ^4.29.3
-    "@wojtekmaj/enzyme-adapter-react-17": ^0.6.3
     babel-loader: ^8.2.2
     babel-plugin-istanbul: ^6.1.1
     consent-app-react: "workspace:*"
     copy-webpack-plugin: ^9.0.1
     css-loader: ^6.3.0
-    dayjs: ^1.10.7
     env-cmd: ^10.1.0
     enzyme: ^3.11.0
     enzyme-to-json: ^3.6.2

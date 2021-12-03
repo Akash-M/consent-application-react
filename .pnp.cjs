@@ -6329,10 +6329,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["npm:5.2.2", {
+          "packageLocation": "./.yarn/cache/@mui-utils-npm-5.2.2-fc4dd50cad-93b814e35d.zip/node_modules/@mui/utils/",
+          "packageDependencies": [
+            ["@mui/utils", "npm:5.2.2"]
+          ],
+          "linkType": "SOFT",
+        }],
         ["virtual:6cb61add7c6f2a20f900324609a0a3a100fb68d2d0c304db2e5980a10b494a2590c15a4b96bd0dddab6d18b6517d185da31a345d5a02cc97a30457e6c936140b#npm:5.1.1", {
           "packageLocation": "./.yarn/__virtual__/@mui-utils-virtual-5e9de9a1c9/0/cache/@mui-utils-npm-5.1.1-1d4e23b3a0-cebbd4e9e5.zip/node_modules/@mui/utils/",
           "packageDependencies": [
             ["@mui/utils", "virtual:6cb61add7c6f2a20f900324609a0a3a100fb68d2d0c304db2e5980a10b494a2590c15a4b96bd0dddab6d18b6517d185da31a345d5a02cc97a30457e6c936140b#npm:5.1.1"],
+            ["@babel/runtime", "npm:7.16.3"],
+            ["@types/prop-types", "npm:15.7.4"],
+            ["@types/react", "npm:17.0.35"],
+            ["@types/react-is", "npm:17.0.3"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.2"],
+            ["react-is", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2", {
+          "packageLocation": "./.yarn/__virtual__/@mui-utils-virtual-935529dfe0/0/cache/@mui-utils-npm-5.2.2-fc4dd50cad-93b814e35d.zip/node_modules/@mui/utils/",
+          "packageDependencies": [
+            ["@mui/utils", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2"],
             ["@babel/runtime", "npm:7.16.3"],
             ["@types/prop-types", "npm:15.7.4"],
             ["@types/react", "npm:17.0.35"],
@@ -23765,7 +23790,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/recoil",
             "@types/testing-library__react",
             "@types/yaml",
-            "dayjs",
             "i18next-browser-languagedetector",
             "i18next-chained-backend",
             "i18next-localstorage-backend",
@@ -33314,6 +33338,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:11.6.0"],
             ["@mui/icons-material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.0"],
             ["@mui/material", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.1.1"],
+            ["@mui/utils", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:5.2.2"],
             ["@svgr/webpack", "npm:5.5.0"],
             ["@testing-library/dom", "npm:7.31.2"],
             ["@testing-library/jest-dom", "npm:5.15.0"],
@@ -33337,13 +33362,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack-dev-server", "npm:3.11.6"],
             ["@typescript-eslint/eslint-plugin", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
             ["@typescript-eslint/parser", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
-            ["@wojtekmaj/enzyme-adapter-react-17", "virtual:3b90b47bee7b65a01926d96c0a3ad430b79b73a3788810e6a6c779c7da6a506924f0f79a0f8d7284cf6f8536882b994db27cec1120a98a3f442ac58bfe13568e#npm:0.6.5"],
             ["babel-loader", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:8.2.3"],
             ["babel-plugin-istanbul", "npm:6.1.1"],
             ["consent-app-react", "virtual:3a43af9903ed46e5a4f3b2dee814c6d144478ad9aeaf0416205a3ea3def3209eba6a06d1c3645abeed8c0d8de146b29bd035def93e5bfe329a601f78220abe65#workspace:."],
             ["copy-webpack-plugin", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:9.1.0"],
             ["css-loader", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:6.5.1"],
-            ["dayjs", "npm:1.10.7"],
             ["env-cmd", "npm:10.1.0"],
             ["enzyme", "npm:3.11.0"],
             ["enzyme-to-json", "virtual:3b90b47bee7b65a01926d96c0a3ad430b79b73a3788810e6a6c779c7da6a506924f0f79a0f8d7284cf6f8536882b994db27cec1120a98a3f442ac58bfe13568e#npm:3.6.2"],
