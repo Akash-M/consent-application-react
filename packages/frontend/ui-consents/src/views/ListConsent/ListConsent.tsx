@@ -15,7 +15,9 @@ export function ListConsent(): JSX.Element {
 
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
   const [consentsCount, setConsentsCount] = useState(0);
-  const [visibleConsentList, setVisibleConsentList] = useState<Consent.Detail[]>([]);
+  const [visibleConsentList, setVisibleConsentList] = useState<
+    Consent.Detail[]
+  >([]);
 
   const handlePageChange = (
     event: React.BaseSyntheticEvent,
@@ -75,7 +77,7 @@ export function ListConsent(): JSX.Element {
       </table>
 
       <Pagination
-        count={Math.round(consentsCount/paginator.perPage)}
+        count={Math.round(consentsCount / paginator.perPage)}
         page={paginator.currentPage}
         variant="outlined"
         onChange={handlePageChange}
