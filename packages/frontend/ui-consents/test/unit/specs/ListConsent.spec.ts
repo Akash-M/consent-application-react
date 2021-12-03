@@ -34,18 +34,88 @@ describe('<App />', () => {
     expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
   });
 
-  test('should change page when user clicks on paginator', async () => {
-    customRenderer(App, initializeState);
-    fireEvent.click(screen.getByText('Global.headers.listConsent'));
-    await waitFor(() => {
-      expect(screen.getByText('user1@email.com')).toBeTruthy();
+  describe('should update table entries when paginator is updated', () => {
+    test('displays second page when user clicks on next page and then back', async () => {
+      customRenderer(App, initializeState);
+      fireEvent.click(screen.getByText('Global.headers.listConsent'));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
+      fireEvent.click(screen.getByLabelText(/next page/i));
+      await waitFor(() => {
+        expect(screen.getByText('user3@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user4@email.com')).toBeTruthy();
+      });
+      fireEvent.click(screen.getByLabelText(/previous page/i));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
     });
-    fireEvent.click(screen.getByLabelText(/next page/i));
-    await waitFor(() => {
-      expect(screen.getByText('user3@email.com')).toBeTruthy();
+
+    test('displays last page when user clicks on last page and then first page', async () => {
+      customRenderer(App, initializeState);
+      fireEvent.click(screen.getByText('Global.headers.listConsent'));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
+      fireEvent.click(screen.getByLabelText(/last page/i));
+      await waitFor(() => {
+        expect(screen.getByText('user5@email.com')).toBeTruthy();
+      });
+      fireEvent.click(screen.getByLabelText(/first page/i));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
     });
-    await waitFor(() => {
-      expect(screen.getByText('user4@email.com')).toBeTruthy();
+
+    test('displays all entries when user tries to display more entries', async () => {
+      customRenderer(App, initializeState);
+      fireEvent.click(screen.getByText('Global.headers.listConsent'));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        fireEvent.click(screen.getByLabelText('rows per page'));
+      });
+      await waitFor(() => {
+        fireEvent.click(screen.getByText('5'));
+      });
+      // FIXME:
+      /*await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });*/
+      /*await waitFor(() => {
+        fireEvent.click(screen.getByText('5'));
+      });*/
+      /*await waitFor(() => {
+        expect(screen.getByText('user3@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user4@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user5@email.com')).toBeTruthy();
+      });*/
     });
   });
 });
