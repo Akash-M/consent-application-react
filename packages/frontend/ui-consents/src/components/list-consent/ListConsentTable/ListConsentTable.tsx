@@ -1,9 +1,3 @@
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,98 +6,19 @@ import TableFooter from '@mui/material/TableFooter';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { useTheme } from '@mui/material/styles';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 import { StyledTableCell } from 'lib-components/src/scss/components/table/StyledTableCell';
 import { StyledTableRow } from 'lib-components/src/scss/components/table/StyledTableRow';
+import { TablePaginationActions } from 'lib-components/src/scss/components/table/TablePaginationActions';
 
 import {
   ConsentListPaginatorState,
   ConsentListState,
 } from '$/store/consents/atoms';
 import './ListConsentTable.scss';
-
-function TablePaginationActions(props: {
-  count: number;
-  page: number;
-  rowsPerPage: number;
-  onPageChange: any;
-}) {
-  const theme = useTheme();
-  const { count, page, rowsPerPage, onPageChange } = props;
-
-  const handleFirstPageButtonClick = (event: any) => {
-    onPageChange(event, 0);
-  };
-
-  const handleBackButtonClick = (event: any) => {
-    onPageChange(event, page - 1);
-  };
-
-  const handleNextButtonClick = (event: any) => {
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-    onPageChange(event, page + 1);
-  };
-
-  const handleLastPageButtonClick = (event: any) => {
-    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
-
-  return (
-    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-      <IconButton
-        aria-label="first page"
-        disabled={page === 0}
-        onClick={handleFirstPageButtonClick}
-      >
-        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-      </IconButton>
-
-      <IconButton
-        aria-label="previous page"
-        disabled={page === 0}
-        onClick={handleBackButtonClick}
-      >
-        {theme.direction === 'rtl' ? (
-          <KeyboardArrowRight />
-        ) : (
-          <KeyboardArrowLeft />
-        )}
-      </IconButton>
-
-      <IconButton
-        aria-label="next page"
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        onClick={handleNextButtonClick}
-      >
-        {theme.direction === 'rtl' ? (
-          <KeyboardArrowLeft />
-        ) : (
-          <KeyboardArrowRight />
-        )}
-      </IconButton>
-
-      <IconButton
-        aria-label="last page"
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        onClick={handleLastPageButtonClick}
-      >
-        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-      </IconButton>
-    </Box>
-  );
-}
-
-TablePaginationActions.propTypes = {
-  count: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  page: PropTypes.number.isRequired,
-  rowsPerPage: PropTypes.number.isRequired,
-};
 
 export function ListConsentTable(): JSX.Element {
   const { t } = useTranslation();
