@@ -1,15 +1,22 @@
-// eslint-disable-next-line import/named
+/* eslint-disable import/named */
 import { Theme, createTheme } from '@mui/material/styles';
+
+export enum AppThemes {
+  Dark = 'dark',
+  Light = 'light',
+}
 
 // define light theme colors
 export const lightTheme: Theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: AppThemes.Light,
     primary: {
-      main: '#007487',
+      main: '#00535c',
     },
-    secondary: {
-      main: '#961b0c',
+    divider: '#007587',
+    text: {
+      primary: '#000000',
+      secondary: '#2b3547',
     },
   },
 });
@@ -17,12 +24,17 @@ export const lightTheme: Theme = createTheme({
 // define dark theme colors
 export const darkTheme: Theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: AppThemes.Dark,
     primary: {
-      main: '#007487',
+      main: '#00535c',
     },
-    secondary: {
-      main: '#961b0c',
+    divider: '#007587',
+    background: {
+      default: '#121212',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#eaeaec',
     },
   },
 });

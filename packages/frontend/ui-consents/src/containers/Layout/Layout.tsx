@@ -1,32 +1,39 @@
 /* eslint-disable import/named */
-import {
-  Theme,
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-} from '@mui/material/styles';
-import React, { useReducer } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Theme, ThemeProvider, createTheme } from '@mui/material/styles';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Route, Routes } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 
-import { darkTheme, lightTheme } from 'lib-components/src/theme/theme';
+import {
+  AppThemes,
+  darkTheme,
+  lightTheme,
+} from 'lib-components/src/theme/theme';
 
 import SiteHeader from '$/components/SiteHeader';
 import { AppRoutes } from '$/router/routes';
+import { AppThemeState } from '$/store/consents/atoms';
 import AddConsent from '$/views/AddConsent';
 import ListConsent from '$/views/ListConsent';
 import './Layout.scss';
 
 export function Layout(): JSX.Element {
   const { t } = useTranslation(['Global']);
-  const [useDefaultTheme, toggle] = useReducer((theme) => !theme, true);
 
-  let theme: Theme = createTheme(useDefaultTheme ? lightTheme : darkTheme);
-  theme = responsiveFontSizes(theme);
+  const currentTheme = useRecoilValue(AppThemeState);
+
+  const theme: Theme = createTheme(
+    currentTheme === AppThemes.Light ? lightTheme : darkTheme,
+  );
 
   return (
     <ThemeProvider theme={theme}>
-      <SiteHeader />
+      <CssBaseline />
+
+      <SiteHeader theme={theme} />
+
       <article className="layout">
         <aside className="layout__links">
           <NavLink to={`/${AppRoutes.AddConsent}`}>

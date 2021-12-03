@@ -36,7 +36,7 @@ describe('<App />', () => {
     fireEvent.click(screen.getByText('Global.consents.newsletter'));
     fireEvent.click(screen.getByText('Global.consents.ads'));
     fireEvent.click(screen.getByText('Global.consents.statistics'));
-    fireEvent.click(screen.getByRole('button'));
+    fireEvent.click(screen.getByText('AddConsent.addButton'));
     await waitFor(() => {
       expect(screen.getByText('AddConsent.success')).toBeTruthy();
     });

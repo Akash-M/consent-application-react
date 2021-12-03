@@ -23,8 +23,6 @@ import './ListConsentTable.scss';
 export function ListConsentTable(): JSX.Element {
   const { t } = useTranslation();
 
-  const tableHeaders: Record<string, string[]> = t('ListConsent.table.headers');
-
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
 
@@ -48,7 +46,7 @@ export function ListConsentTable(): JSX.Element {
         <Table aria-label="simple table" sx={{ minWidth: 650 }}>
           <TableHead>
             <TableRow>
-              {Object.keys(tableHeaders).map((header) => {
+              {Object.keys(t('ListConsent.table.headers')).map((header) => {
                 return <StyledTableCell key={header}>{header}</StyledTableCell>;
               })}
             </TableRow>
