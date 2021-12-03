@@ -17111,7 +17111,11 @@ fsevents@^1.2.7:
     "@babel/preset-react": ^7.14.5
     "@babel/preset-typescript": ^7.15.0
     "@babel/runtime": ^7.15.4
+    "@emotion/react": ^11.6.0
+    "@emotion/styled": ^11.6.0
     "@mdx-js/react": ^1.6.22
+    "@mui/icons-material": ^5.2.0
+    "@mui/material": ^5.1.1
     "@storybook/addon-actions": ^6.3.12
     "@storybook/addon-docs": ^6.3.12
     "@storybook/addon-essentials": ^6.3.12
@@ -17198,6 +17202,10 @@ fsevents@^1.2.7:
     webpack-cli: ^4.9.1
     webpack-dev-server: ^4.4.0
   peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    "@mui/icons-material": "*"
+    "@mui/material": "*"
     history: "*"
     react: "*"
     react-dom: "*"

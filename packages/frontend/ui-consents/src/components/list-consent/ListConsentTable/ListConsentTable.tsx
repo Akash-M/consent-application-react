@@ -7,17 +7,19 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableFooter from '@mui/material/TableFooter';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { styled, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState, useRecoilValue } from 'recoil';
+
+import { StyledTableCell } from 'lib-components/src/scss/components/table/StyledTableCell';
+import { StyledTableRow } from 'lib-components/src/scss/components/table/StyledTableRow';
 
 import {
   ConsentListPaginatorState,
@@ -110,30 +112,6 @@ export function ListConsentTable(): JSX.Element {
 
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
-
-  // TODO: move this to `lib-components`.
-  const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white,
-      fontWeight: 'bold',
-      textTransform: 'uppercase',
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-    },
-  }));
-
-  // TODO: move this to `lib-components`.
-  const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-      border: 0,
-    },
-  }));
 
   const handleChangePage = (event: any, newPage: number) => {
     setPaginator((oldPaginator) => ({

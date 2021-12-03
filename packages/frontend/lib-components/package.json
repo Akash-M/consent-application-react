@@ -30,6 +30,10 @@
     "test": "yarn test:unit"
   },
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.1.1",
     "lib-utils": "workspace:*",
     "react-docgen-typescript": "^2.1.1"
   },
@@ -143,6 +147,10 @@
     ]
   },
   "peerDependencies": {
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
+    "@mui/icons-material": "*",
+    "@mui/material": "*",
     "history": "*",
     "react": "*",
     "react-dom": "*",
