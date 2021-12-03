@@ -25,3 +25,5 @@ jobs:
         run: yarn install
       - name: Run linter
         run: yarn workspace lib-api lint
+      - name: Run test:unit
+        run: yarn workspace lib-api test:unit
