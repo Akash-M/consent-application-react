@@ -30,7 +30,6 @@ describe('<App />', () => {
     test('without any form validation messages by default', () => {
       const { container } = customRenderer(App, initializeState);
       expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
-      expect(container.firstChild).toMatchSnapshot();
     });
 
     test('with form validation messages when user clicks on submit and form is invalid', async () => {
@@ -40,7 +39,6 @@ describe('<App />', () => {
         expect(screen.getByText('AddConsent.errors.consents')).toBeTruthy();
       });
       expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
-      expect(container.firstChild).toMatchSnapshot();
     });
   });
 
