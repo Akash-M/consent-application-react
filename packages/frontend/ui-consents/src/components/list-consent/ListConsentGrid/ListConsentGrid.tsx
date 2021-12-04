@@ -1,12 +1,5 @@
 /* eslint-disable import/named,@typescript-eslint/restrict-template-expressions */
-import Tooltip from '@mui/material/Tooltip';
-import {
-  DataGrid,
-  GridColumns,
-  GridSortDirection,
-  GridSortModel,
-  GridValueGetterParams,
-} from '@mui/x-data-grid';
+import { DataGrid, GridSortModel } from '@mui/x-data-grid';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -16,6 +9,8 @@ import {
   ConsentListState,
 } from '$/store/consents/atoms';
 import './ListConsentGrid.scss';
+import { ToolBar } from './ToolBar';
+import { filterModel, generateColumnModel, sortModel } from './grid-config';
 
 export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
@@ -23,55 +18,9 @@ export function ListConsentGrid(): JSX.Element {
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
 
-  const generateConsent = (consent: any) => {
-    const data = [];
-    if (consent.newsletter) data.push(t('Global.consents.newsletter'));
-    if (consent.ads) data.push(t('Global.consents.ads'));
-    if (consent.statistics) data.push(t('Global.consents.statistics'));
-    return data.join(', ');
-  };
+  const columns = generateColumnModel(t);
 
-  const columns: GridColumns = [
-    {
-      field: 'username',
-      headerName: t('ListConsent.table.headers.username'),
-      sortable: true,
-      width: 250,
-    },
-    {
-      field: 'email',
-      headerName: t('ListConsent.table.headers.email'),
-      sortable: true,
-      width: 250,
-    },
-    {
-      field: 'consent',
-      headerName: t('ListConsent.table.headers.consent'),
-      renderCell: (params: any) => {
-        const toolTipValue = generateConsent(params.row.consent);
-        return (
-          <Tooltip title={toolTipValue}>
-            <span className="table-cell-trucate">{toolTipValue}</span>
-          </Tooltip>
-        );
-      },
-      valueGetter: (params: GridValueGetterParams) => {
-        return generateConsent(params.row.consent);
-      },
-      width: 500,
-    },
-  ];
-
-  const [sortModel, setSortModel] = useState<GridSortModel>([
-    {
-      field: 'username',
-      sort: 'asc' as GridSortDirection,
-    },
-    {
-      field: 'email',
-      sort: 'asc' as GridSortDirection,
-    },
-  ]);
+  const [sortConfig, setSortConfig] = useState<GridSortModel>(sortModel);
 
   const handleChangeRowsPerPage = (rowsPerPage: number) => {
     setPaginator(() => ({
@@ -84,15 +33,21 @@ export function ListConsentGrid(): JSX.Element {
     <section className="list-consent-table">
       <DataGrid
         pagination
+        autoHeight={true}
         className="consent-grid"
         columns={columns}
+        components={{
+          Toolbar: ToolBar,
+        }}
         disableColumnMenu={true}
+        disableSelectionOnClick={true}
+        initialState={{ filter: filterModel.filter }}
         pageSize={paginator.perPage}
         rows={consentList}
         rowsPerPageOptions={[2, 5, 10]}
-        sortModel={sortModel}
+        sortModel={sortConfig}
         onPageSizeChange={handleChangeRowsPerPage}
-        onSortModelChange={(model) => setSortModel(model)}
+        onSortModelChange={(model) => setSortConfig(model)}
       />
     </section>
   );

@@ -1,5 +1,4 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { setI18n } from 'react-i18next';
 
 import { consentListFixtures } from 'lib-api/src/fixtures';
@@ -61,56 +60,8 @@ describe('<App />', () => {
       });
     });
 
-    test('displays last page when user clicks on last page and then first page', async () => {
-      customRenderer(App, initializeState);
-      fireEvent.click(screen.getByText('Global.headers.listConsent'));
-      await waitFor(() => {
-        expect(screen.getByText('user1@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });
-      fireEvent.click(screen.getByLabelText(/last page/i));
-      await waitFor(() => {
-        expect(screen.getByText('user5@email.com')).toBeTruthy();
-      });
-      fireEvent.click(screen.getByLabelText(/first page/i));
-      await waitFor(() => {
-        expect(screen.getByText('user1@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });
-    });
+    // TODO: add test for sorting.
 
-    test('displays all entries when user tries to display more entries', async () => {
-      customRenderer(App, initializeState);
-      fireEvent.click(screen.getByText('Global.headers.listConsent'));
-      await waitFor(() => {
-        expect(screen.getByText('user1@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });
-      userEvent.selectOptions(
-        screen.getByLabelText('ListConsent.table.pagination.perPage'),
-        '-1',
-      );
-      await waitFor(() => {
-        expect(screen.getByText('user1@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user3@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user4@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user5@email.com')).toBeTruthy();
-      });
-    });
+    // TODO: add test for updating rows per page.
   });
 });

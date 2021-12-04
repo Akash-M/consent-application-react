@@ -1,5 +1,4 @@
 .list-consent-table {
-  height: 250px;
   width: 100%;
 
   .consent-grid {
@@ -8,8 +7,6 @@
 
     .MuiDataGrid-columnHeaders {
       background: $ca-accent-color;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
 
       .MuiDataGrid-columnHeaderTitle {
         color: white;

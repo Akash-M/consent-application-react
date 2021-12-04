@@ -58,7 +58,9 @@ exports[`<App /> should toggle theme when user switches theme 1`] = `
         <h2>
           AddConsent.header
         </h2>
-        <form>
+        <form
+          novalidate=""
+        >
           <section
             class="add-consent__user-info"
           >
@@ -322,7 +324,9 @@ exports[`<App /> should toggle theme when user switches theme 2`] = `
         <h2>
           AddConsent.header
         </h2>
-        <form>
+        <form
+          novalidate=""
+        >
           <section
             class="add-consent__user-info"
           >

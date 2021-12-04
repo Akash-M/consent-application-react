@@ -58,7 +58,9 @@ exports[`<App /> should render screen to add new consent entry by default with b
         <h2>
           AddConsent.header
         </h2>
-        <form>
+        <form
+          novalidate=""
+        >
           <section
             class="add-consent__user-info"
           >
