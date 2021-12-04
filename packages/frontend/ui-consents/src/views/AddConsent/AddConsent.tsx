@@ -68,6 +68,7 @@ export function AddConsent(): JSX.Element {
 
   const handleSubmit = async (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
+    /* istanbul ignore else */
     if (isFormValid) {
       try {
         const response = await postConsent(formData);

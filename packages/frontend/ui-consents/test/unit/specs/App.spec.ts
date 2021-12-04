@@ -22,12 +22,10 @@ describe('<App />', () => {
   beforeEach(jest.clearAllMocks);
 
   test('should toggle theme when user switches theme', async () => {
-    const { container } = customRenderer(App, initializeState);
-    expect(container.firstChild).toMatchSnapshot();
+    customRenderer(App, initializeState);
     fireEvent.click(screen.getByTestId('Brightness4Icon'));
     await waitFor(() => {
       expect(screen.getByTestId('Brightness7Icon')).toBeTruthy();
     });
-    expect(container.firstChild).toMatchSnapshot();
   });
 });
