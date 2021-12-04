@@ -52,8 +52,8 @@ describe('<App />', () => {
     });
   });
 
-  describe('should update table entries when paginator is updated', () => {
-    test('displays second page when user clicks on next page and then back', async () => {
+  describe('should update grid entries', () => {
+    test('display second page when user clicks on next page and then back', async () => {
       (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
       customRenderer(App, initializeState);
       fireEvent.click(screen.getByText('Global.headers.listConsent'));
@@ -79,7 +79,24 @@ describe('<App />', () => {
       });
     });
 
-    // TODO: add test for sorting.
+    test('display grid entries in descending order', async () => {
+      (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
+      customRenderer(App, initializeState);
+      fireEvent.click(screen.getByText('Global.headers.listConsent'));
+      await waitFor(() => {
+        expect(screen.getByText('user1@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user2@email.com')).toBeTruthy();
+      });
+      fireEvent.click(screen.getAllByLabelText('Sort')[1]);
+      await waitFor(() => {
+        expect(screen.getByText('user5@email.com')).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(screen.getByText('user4@email.com')).toBeTruthy();
+      });
+    });
 
     // TODO: add test for updating rows per page.
   });

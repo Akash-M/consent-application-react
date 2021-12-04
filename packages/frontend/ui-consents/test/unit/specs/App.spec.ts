@@ -27,5 +27,9 @@ describe('<App />', () => {
     await waitFor(() => {
       expect(screen.getByTestId('Brightness7Icon')).toBeTruthy();
     });
+    fireEvent.click(screen.getByTestId('Brightness7Icon'));
+    await waitFor(() => {
+      expect(screen.getByTestId('Brightness4Icon')).toBeTruthy();
+    });
   });
 });
