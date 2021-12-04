@@ -20,7 +20,7 @@ import './AddConsent.scss';
 const EmailRegex = /^\S+@\S+$/i;
 
 export function AddConsent(): JSX.Element {
-  const { t } = useTranslation(['Global', 'AddConsent']);
+  const { t } = useTranslation(['AddConsent']);
 
   const setConsentList = useSetRecoilState(ConsentListState);
 
@@ -68,6 +68,7 @@ export function AddConsent(): JSX.Element {
 
   const handleSubmit = async (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
+    /* istanbul ignore else */
     if (isFormValid) {
       try {
         const response = await postConsent(formData);

@@ -1,5 +1,6 @@
 # Consent App (React)
-React app to collect consents based on https://github.com/didomi/challenges/tree/master/frontend 
+
+React app to collect consents based on https://github.com/didomi/challenges/tree/master/frontend
 
 ## Pipeline status:
 
@@ -11,26 +12,31 @@ React app to collect consents based on https://github.com/didomi/challenges/tree
 ## Prerequisites
 
 ### Package Manager
+
 This repo is based on Yarn3. Ensure that you have a global installation of
-[Yarn3](https://yarnpkg.com/getting-started/install#global-install).
-Note: The project uses `pnp` to ensure faster installation of application dependencies in a monorepo setup.
+[Yarn3](https://yarnpkg.com/getting-started/install#global-install). Note: The project uses `pnp` to ensure faster
+installation of application dependencies in a monorepo setup.
 
 You can test if yarn is installed correctly by using:
+
 ```sh
 yarn --version
 ```
 
-Upgrade dependencies: 
+Upgrade dependencies:
+
 ```sh
 npx yarn-upgrade-all
 ```
 
 Start the frontend
+
 ```sh
 yarn start:frontend
 ```
 
 ### Further documentation:
+
 Please find the documentation specific to the apps inside the app ReadMe linked in the following section:
 [lib-api](packages/frontend/lib-api/README.md)
 [lib-components](packages/frontend/lib-components/README.md)
@@ -38,17 +44,18 @@ Please find the documentation specific to the apps inside the app ReadMe linked 
 [ui-consents](packages/frontend/ui-consents/README.md)
 
 ### Workspace Structure
+
 This application follows a monorepo approach. The following sections explains the folder structure:
 
 - `./.github/`: PR templates and Github Action definitions.
 - `./.yarn/`: Dependencies installed from yarn2.
 - `./packages/`: TypeScript applications defined as independent modules.
     - `frontend/`: Folder containing the frontend application and related code.
-      - `lib-api`: Library of global api calls. Consists of mocked api calls for sake of demo.
-      - `lib-components`: Library of global generic components independent of application specific logic.
-      - `lib-utils`: Library of global utility files.
-      - `types`: Global type definitions for frontend folder.
-      - `ui-consents`: The Consents client app which is the final deliverable.
+        - `lib-api`: Library of global api calls. Consists of mocked api calls for sake of demo.
+        - `lib-components`: Library of global generic components independent of application specific logic.
+        - `lib-utils`: Library of global utility files.
+        - `types`: Global type definitions for frontend folder.
+        - `ui-consents`: The Consents client app which is the final deliverable.
 - `./`
     - `.eslintrc.js`: The global ESLint rules.
     - `.gitignore`: File and folder globs to be ignored by git.
@@ -65,3 +72,8 @@ This application follows a monorepo approach. The following sections explains th
 ### Application Architecture:
 
 ![img.png](img.png)
+
+### Future Improvements:
+
+- Filter for @mui DataGrid is not responsive due to open issue in the library:
+  https://github.com/mui-org/material-ui-x/issues/883

@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 
-import { AppThemes } from 'lib-components/src/theme/theme';
+import { AppThemes } from 'lib-components/src/theme/app-theme';
 
 import { AppThemeState } from '$/store/consents/atoms';
 import './SiteHeader.scss';

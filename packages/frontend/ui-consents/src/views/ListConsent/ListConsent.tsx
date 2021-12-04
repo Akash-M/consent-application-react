@@ -10,7 +10,7 @@ import { ConsentListState } from '$/store/consents/atoms';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
-  const { t } = useTranslation(['Global', 'ListConsent']);
+  const { t } = useTranslation(['ListConsent']);
 
   const setConsentList = useSetRecoilState(ConsentListState);
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ export function ListConsent(): JSX.Element {
     try {
       setConsentList(await getConsents());
     } catch {
-      toast.error(t('AddConsent.errors.api'), {
+      toast.error(t('ListConsent.errors.api'), {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
     } finally {
@@ -36,7 +36,7 @@ export function ListConsent(): JSX.Element {
     <article className="list-consent">
       <h2>{t('ListConsent.header')}</h2>
 
-      {loading ? <div>Loading...</div> : <ListConsentGrid />}
+      {loading ? <div>{t('Global.loader')}</div> : <ListConsentGrid />}
     </article>
   );
 }
