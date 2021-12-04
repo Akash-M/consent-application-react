@@ -20,7 +20,7 @@ import './AddConsent.scss';
 const EmailRegex = /^\S+@\S+$/i;
 
 export function AddConsent(): JSX.Element {
-  const { t } = useTranslation(['Global', 'AddConsent']);
+  const { t } = useTranslation(['AddConsent']);
 
   const setConsentList = useSetRecoilState(ConsentListState);
 
