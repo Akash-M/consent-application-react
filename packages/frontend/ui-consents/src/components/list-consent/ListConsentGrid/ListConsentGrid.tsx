@@ -4,18 +4,19 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
 
-import {
-  ConsentListPaginatorState,
-  ConsentListState,
-} from '$/store/consents/atoms';
+import { ConsentListState } from '$/store/consents/atoms';
 import './ListConsentGrid.scss';
 import { ToolBar } from './ToolBar';
-import { filterModel, generateColumnModel, sortModel } from './grid-config';
+import {
+  PerPage,
+  filterModel,
+  generateColumnModel,
+  sortModel,
+} from './grid-config';
 
 export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
 
-  const paginator = useRecoilValue(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
 
   const columns = generateColumnModel(t);
@@ -35,9 +36,9 @@ export function ListConsentGrid(): JSX.Element {
         disableColumnMenu={true}
         disableSelectionOnClick={true}
         initialState={{ filter: filterModel.filter }}
-        pageSize={paginator.perPage}
+        pageSize={PerPage}
         rows={consentList}
-        rowsPerPageOptions={[2]}
+        rowsPerPageOptions={[PerPage]}
         sortModel={sortConfig}
         onSortModelChange={(model) => setSortConfig(model)}
       />

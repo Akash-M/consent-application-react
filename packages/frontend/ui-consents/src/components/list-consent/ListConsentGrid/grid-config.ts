@@ -9,6 +9,8 @@ import { TFunction } from 'react-i18next';
 
 import { ToolTip } from './ToolTip';
 
+export const PerPage = 2;
+
 export enum SortFields {
   Username = 'username',
   Email = 'email',
@@ -44,7 +46,7 @@ export const filterModel: GridInitialState = {
   },
 };
 
-export const generateConsentText = (
+const generateConsentText = (
   consent: Consent.Detail['consent'],
   t: TFunction<'translation', undefined>,
 ): string => {

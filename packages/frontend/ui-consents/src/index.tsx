@@ -1,22 +1,25 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
 
 import setI18n from 'lib-utils/src/i18n';
 
 import App from '$/App';
+import configureStore from '$/state';
+
+const { store } = configureStore();
 
 export function Root(): JSX.Element {
   return (
     <React.StrictMode>
-      <RecoilRoot>
+      <Provider store={store}>
         <Router>
           <Suspense fallback={null}>
             <App />
           </Suspense>
         </Router>
-      </RecoilRoot>
+      </Provider>
     </React.StrictMode>
   );
 }
