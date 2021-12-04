@@ -36,7 +36,7 @@ export function ListConsent(): JSX.Element {
     <article className="list-consent">
       <h2>{t('ListConsent.header')}</h2>
 
-      {loading ? <div>Loading...</div> : <ListConsentGrid />}
+      {loading ? <div>{t('Global.loader')}</div> : <ListConsentGrid />}
     </article>
   );
 }

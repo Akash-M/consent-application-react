@@ -33,6 +33,9 @@ describe('<App />', () => {
       const { container } = customRenderer(App, initializeState);
       fireEvent.click(screen.getByText('Global.headers.listConsent'));
       await waitFor(() => {
+        expect(screen.getByText('Global.loader')).toBeTruthy();
+      });
+      await waitFor(() => {
         expect(screen.getByText('user1@email.com')).toBeTruthy();
       });
       await waitFor(() => {
