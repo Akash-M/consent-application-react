@@ -15,9 +15,9 @@ import {
   ConsentListPaginatorState,
   ConsentListState,
 } from '$/store/consents/atoms';
-import './ListConsentTable.scss';
+import './ListConsentGrid.scss';
 
-export function ListConsentTable(): JSX.Element {
+export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
 
   const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
