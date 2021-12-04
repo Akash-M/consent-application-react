@@ -1,16 +1,16 @@
 .site-header {
-	align-items: center;
-	border-bottom: 1px solid $ca-copy-10;
-	display: flex;
-	flex-flow: row nowrap;
-	height: 60px;
-	justify-content: space-between;
-	padding: 1rem 1.5rem;
-	position: relative;
-	width: 100%;
-	z-index: map-get($zindex, header);
+  align-items: center;
+  border-bottom: 1px solid $ca-copy-10;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 60px;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  position: relative;
+  width: 100%;
+  z-index: map-get($zindex, header);
 
-	> h2 {
-		color: $ca-accent-color;
-	}
+  > h2 {
+    color: $ca-accent-color;
+  }
 }
