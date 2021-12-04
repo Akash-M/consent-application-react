@@ -10,8 +10,11 @@
       background: $ca-accent-color;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      color: white;
-      font-weight: bold;
+
+      .MuiDataGrid-columnHeaderTitle {
+        color: white;
+        font-weight: 700;
+      }
 
       .MuiButtonBase-root {
         color: $ca-white;

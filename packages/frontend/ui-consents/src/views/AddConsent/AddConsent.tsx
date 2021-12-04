@@ -87,7 +87,7 @@ export function AddConsent(): JSX.Element {
     <article className="add-consent">
       <h2>{t('AddConsent.header')}</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form noValidate onSubmit={handleSubmit}>
         <section className="add-consent__user-info">
           <TextField
             required
