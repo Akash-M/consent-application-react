@@ -5,7 +5,7 @@ import { useSetRecoilState } from 'recoil';
 
 import { getConsents } from 'lib-api/src/consent';
 
-import ListConsentTable from '$/components/list-consent/ListConsentTable';
+import ListConsentGrid from '$/components/list-consent/ListConsentGrid';
 import { ConsentListState } from '$/store/consents/atoms';
 import './ListConsent.scss';
 
@@ -36,7 +36,7 @@ export function ListConsent(): JSX.Element {
     <article className="list-consent">
       <h2>{t('ListConsent.header')}</h2>
 
-      {loading ? <div>Loading...</div> : <ListConsentTable />}
+      {loading ? <div>Loading...</div> : <ListConsentGrid />}
     </article>
   );
 }

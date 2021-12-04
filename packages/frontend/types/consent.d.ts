@@ -6,11 +6,11 @@ declare namespace Consent {
       newsletter: boolean;
       ads: boolean;
       statistics: boolean;
-    }
+    };
   }
 
   export interface Detail extends NewEntry {
-    consentUuid: string;
+    id: string;
   }
 
   export interface Paginator {

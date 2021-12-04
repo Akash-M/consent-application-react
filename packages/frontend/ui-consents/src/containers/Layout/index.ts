@@ -1,1 +1,1 @@
-export { Layout as default } from '$/containers/Layout/Layout';
+export { Layout as default } from './Layout';

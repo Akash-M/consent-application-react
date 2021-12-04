@@ -1,0 +1,25 @@
+.list-consent-table {
+  width: 100%;
+
+  .consent-grid {
+    display: flex;
+    flex-direction: column;
+
+    .MuiDataGrid-columnHeaders {
+      background: $ca-accent-color;
+
+      .MuiDataGrid-columnHeaderTitle {
+        color: white;
+        font-weight: 700;
+      }
+
+      .MuiButtonBase-root {
+        color: $ca-white;
+      }
+    }
+  }
+
+  .MuiBadge-badge {
+    display: none;
+  }
+}

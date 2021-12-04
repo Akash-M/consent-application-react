@@ -7,5 +7,7 @@ table:
   pagination:
     previous: Previous Page
     next: Next Page
+    perPage: Rows per page
+    all: All
 errors:
   api: Error fetching consent list. Please try again in some time.

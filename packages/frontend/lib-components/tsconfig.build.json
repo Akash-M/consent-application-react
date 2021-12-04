@@ -3,6 +3,12 @@
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["src", "../lib-utils/src"],
-  "exclude": ["test/**"]
+  "include": [
+    "src",
+    "../lib-utils/src",
+    "../types"
+  ],
+  "exclude": [
+    "test/**"
+  ]
 }

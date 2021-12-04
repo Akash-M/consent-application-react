@@ -9,22 +9,22 @@
   }
 
   &__links {
-    border-right: 1px solid $ca-copy-10;
     display: flex;
     flex-direction: row;
 
     @include tablet {
+      border-right: 1px solid $ca-copy-10;
       flex-basis: 20%;
       flex-direction: column;
       max-width: 200px;
       min-width: 200px;
     }
 
+    // TODO: create styled component for anchor.
     > a {
       border-bottom: 1px solid $ca-copy-10;
       color: $ca-copy;
-      font-size: 18px;
-      margin-top: 1rem;
+      font-size: 14px;
       padding: 1rem;
       text-decoration: none;
       width: 50%;
@@ -36,6 +36,7 @@
       }
 
       @include tablet {
+        font-size: 18px;
         width: auto;
       }
     }
