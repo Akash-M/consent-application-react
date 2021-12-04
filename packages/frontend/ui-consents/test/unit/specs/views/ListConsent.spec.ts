@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { setI18n } from 'react-i18next';
 
 import { consentListFixtures } from 'lib-api/src/fixtures';
@@ -91,23 +92,17 @@ describe('<App />', () => {
       await waitFor(() => {
         expect(screen.getByText('user2@email.com')).toBeTruthy();
       });
+      userEvent.selectOptions(
+        screen.getByLabelText('ListConsent.table.pagination.perPage'),
+        '-1',
+      );
       await waitFor(() => {
-        fireEvent.click(screen.getByLabelText('rows per page'));
-      });
-      await waitFor(() => {
-        fireEvent.click(screen.getByText('5'));
-      });
-      // FIXME:
-      /*await waitFor(() => {
         expect(screen.getByText('user1@email.com')).toBeTruthy();
       });
       await waitFor(() => {
         expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });*/
-      /*await waitFor(() => {
-        fireEvent.click(screen.getByText('5'));
-      });*/
-      /*await waitFor(() => {
+      });
+      await waitFor(() => {
         expect(screen.getByText('user3@email.com')).toBeTruthy();
       });
       await waitFor(() => {
@@ -115,7 +110,7 @@ describe('<App />', () => {
       });
       await waitFor(() => {
         expect(screen.getByText('user5@email.com')).toBeTruthy();
-      });*/
+      });
     });
   });
 });

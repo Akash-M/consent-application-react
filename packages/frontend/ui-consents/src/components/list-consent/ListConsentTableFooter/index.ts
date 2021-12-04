@@ -1,1 +1,1 @@
-export { ListConsentTableFooter as default } from './ListConsentTableHeader';
+export { ListConsentTableFooter as default } from './ListConsentTableFooter';
