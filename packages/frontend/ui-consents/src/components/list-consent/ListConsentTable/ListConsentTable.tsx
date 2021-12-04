@@ -1,16 +1,16 @@
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableContainer from '@mui/material/TableContainer';
-import React from 'react';
+/* eslint-disable import/named,@typescript-eslint/restrict-template-expressions */
+import Tooltip from '@mui/material/Tooltip';
+import {
+  DataGrid,
+  GridColumns,
+  GridSortDirection,
+  GridSortModel,
+  GridValueGetterParams,
+} from '@mui/x-data-grid';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
-import { StyledTableCell } from 'lib-components/src/components/table/StyledTableCell';
-import { StyledTableRow } from 'lib-components/src/components/table/StyledTableRow';
-
-import ListConsentTableFooter from '$/components/list-consent/ListConsentTableFooter';
-import ListConsentTableHeader from '$/components/list-consent/ListConsentTableHeader';
 import {
   ConsentListPaginatorState,
   ConsentListState,
@@ -20,48 +20,80 @@ import './ListConsentTable.scss';
 export function ListConsentTable(): JSX.Element {
   const { t } = useTranslation();
 
-  const paginator = useRecoilValue(ConsentListPaginatorState);
+  const [paginator, setPaginator] = useRecoilState(ConsentListPaginatorState);
   const consentList = useRecoilValue(ConsentListState);
+
+  const generateConsent = (consent: any) => {
+    const data = [];
+    if (consent.newsletter) data.push(t('Global.consents.newsletter'));
+    if (consent.ads) data.push(t('Global.consents.ads'));
+    if (consent.statistics) data.push(t('Global.consents.statistics'));
+    return data.join(', ');
+  };
+
+  const columns: GridColumns = [
+    {
+      field: 'username',
+      headerName: t('ListConsent.table.headers.username'),
+      sortable: true,
+      width: 250,
+    },
+    {
+      field: 'email',
+      headerName: t('ListConsent.table.headers.email'),
+      sortable: true,
+      width: 250,
+    },
+    {
+      field: 'consent',
+      headerName: t('ListConsent.table.headers.consent'),
+      renderCell: (params: any) => {
+        const toolTipValue = generateConsent(params.row.consent);
+        return (
+          <Tooltip title={toolTipValue}>
+            <span className="table-cell-trucate">{toolTipValue}</span>
+          </Tooltip>
+        );
+      },
+      valueGetter: (params: GridValueGetterParams) => {
+        return generateConsent(params.row.consent);
+      },
+      width: 500,
+    },
+  ];
+
+  const [sortModel, setSortModel] = useState<GridSortModel>([
+    {
+      field: 'username',
+      sort: 'asc' as GridSortDirection,
+    },
+    {
+      field: 'email',
+      sort: 'asc' as GridSortDirection,
+    },
+  ]);
+
+  const handleChangeRowsPerPage = (rowsPerPage: number) => {
+    setPaginator(() => ({
+      currentPage: 0,
+      perPage: rowsPerPage,
+    }));
+  };
 
   return (
     <section className="list-consent-table">
-      <TableContainer component={Paper}>
-        <Table aria-label="simple table" sx={{ minWidth: 650 }}>
-          <ListConsentTableHeader />
-
-          <TableBody>
-            {(paginator.perPage > 0
-              ? consentList.slice(
-                  paginator.currentPage * paginator.perPage,
-                  paginator.currentPage * paginator.perPage + paginator.perPage,
-                )
-              : consentList
-            ).map((consent) => (
-              <StyledTableRow key={consent.consentUuid}>
-                <StyledTableCell>{consent.username}</StyledTableCell>
-
-                <StyledTableCell>{consent.email}</StyledTableCell>
-
-                <StyledTableCell>
-                  <p>
-                    {consent.consent.newsletter &&
-                      t('Global.consents.newsletter')}
-                  </p>
-
-                  <p>{consent.consent.ads && t('Global.consents.ads')}</p>
-
-                  <p>
-                    {consent.consent.statistics &&
-                      t('Global.consents.statistics')}
-                  </p>
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-
-          <ListConsentTableFooter />
-        </Table>
-      </TableContainer>
+      <DataGrid
+        pagination
+        className="consent-grid"
+        columns={columns}
+        disableColumnMenu={true}
+        pageSize={paginator.perPage}
+        rows={consentList}
+        rowsPerPageOptions={[2, 5, 10]}
+        sortModel={sortModel}
+        onPageSizeChange={handleChangeRowsPerPage}
+        onSortModelChange={(model) => setSortModel(model)}
+      />
     </section>
   );
 }

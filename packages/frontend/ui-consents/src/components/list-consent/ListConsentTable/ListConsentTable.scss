@@ -1,5 +1,25 @@
 .list-consent-table {
-  .MuiPaper-root {
-    margin-bottom: pxToRem(16);
+  height: 250px;
+  width: 100%;
+
+  .consent-grid {
+    display: flex;
+    flex-direction: column;
+
+    .MuiDataGrid-columnHeaders {
+      background: $ca-accent-color;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      color: white;
+      font-weight: bold;
+
+      .MuiButtonBase-root {
+        color: $ca-white;
+      }
+    }
+  }
+
+  .MuiBadge-badge {
+    display: none;
   }
 }

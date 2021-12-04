@@ -23,7 +23,7 @@ export async function postConsent(
   consent: Consent.NewEntry,
 ): Promise<Consent.Detail> {
   const newConsentEntry = {
-    consentUuid: genUuid(),
+    id: genUuid(),
     ...consent,
   };
   consents = [...consents, newConsentEntry];

@@ -3713,6 +3713,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/x-data-grid@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@mui/x-data-grid@npm:5.1.0"
+  dependencies:
+    "@mui/utils": ^5.1.1
+    clsx: ^1.1.1
+    prop-types: ^15.7.2
+    reselect: ^4.1.4
+  peerDependencies:
+    "@mui/material": ^5.1.1
+    "@mui/system": ^5.1.1
+    react: ^17.0.2
+  checksum: 4904ea05a9a932892592d9c6636931ed08d4a2cdf7e5c3adb449522614b762be77c48425ce7937af3fc2edf1f5a023dc0d099870c67daad176385ff55bbc89f6
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.4":
   version: 2.1.4
   resolution: "@nodelib/fs.scandir@npm:2.1.4"
@@ -21896,6 +21912,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"reselect@npm:^4.1.4":
+  version: 4.1.5
+  resolution: "reselect@npm:4.1.5"
+  checksum: 54c13c1e795b2ea70cba8384138aebe78adda00cbea303cc94b64da0a70d74c896cc9a03115ae38b8bff990e7a60dcd6452ab68cbec01b0b38c1afda70714cf0
+  languageName: node
+  linkType: hard
+
 "resolve-cwd@npm:^2.0.0":
   version: 2.0.0
   resolution: "resolve-cwd@npm:2.0.0"
@@ -24831,6 +24854,7 @@ typescript@^4.3.5:
     "@material-ui/core": ^4.12.3
     "@mui/icons-material": ^5.2.0
     "@mui/material": ^5.1.1
+    "@mui/x-data-grid": ^5.1.0
     "@svgr/webpack": ^5.5.0
     "@testing-library/dom": ^7.31.2
     "@testing-library/jest-dom": ^5.14.1
