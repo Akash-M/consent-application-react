@@ -10,7 +10,7 @@ import {
   AppThemes,
   darkTheme,
   lightTheme,
-} from 'lib-components/src/theme/theme';
+} from 'lib-components/src/theme/app-theme';
 
 import SiteHeader from '$/components/SiteHeader';
 import { AppRoutes } from '$/router/routes';
