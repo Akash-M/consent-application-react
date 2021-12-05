@@ -23,11 +23,37 @@ You can test if yarn is installed correctly by using:
 yarn --version
 ```
 
-Start the frontend
+### Step 1: Install dependencies:
+
+```sh
+yarn
+```
+
+### Step 2: Start the frontend app:
+
+Start `ui-consents` app
 
 ```sh
 yarn start:frontend
 ```
+
+### Step 3(Optional): Run storybook to display component library:
+
+Start `lib-components` app
+
+```sh
+yarn start:storybook
+```
+
+### Step 4: Starting `ui-consents` using Docker
+
+Ensure that docker is running on your machine. Then, run the following script:
+
+```sh
+yarn start:docker
+```
+
+Once the docker container is built, `ui-consents` app can be accessed on `0.0.0.0:8080/`.
 
 ***NOTE:***
 If you need to run scripts for individual packages you can use the following commands:
