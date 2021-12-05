@@ -9,6 +9,8 @@ React app to collect consents based on https://github.com/didomi/challenges/tree
 [![lib-utils](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml)
 [![ui-consents](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml)
 
+## [Live Demo](https://akash-m.github.io/)
+
 ## Prerequisites
 
 ### Package Manager
@@ -45,7 +47,7 @@ Start `lib-components` app
 yarn start:storybook
 ```
 
-### Step 4: Starting `ui-consents` using Docker
+### Step 4(Optional): Starting `ui-consents` using Docker
 
 Ensure that docker is running on your machine. Then, run the following script:
 
