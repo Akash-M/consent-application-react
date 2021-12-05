@@ -7,6 +7,7 @@ import { loadI18n } from 'lib-utils/src/testing/i18n';
 import App from '$/App';
 import AddConsent from '$/assets/locales/en/AddConsent.yaml';
 import Global from '$/assets/locales/en/Global.yaml';
+import store from '$/store';
 
 describe('<App />', () => {
   beforeAll(() => {
@@ -16,7 +17,7 @@ describe('<App />', () => {
   beforeEach(jest.clearAllMocks);
 
   test('should toggle theme when user switches theme', async () => {
-    customRenderer(App);
+    customRenderer(App, store);
     await waitFor(() => {
       expect(screen.getByTestId('Brightness4Icon')).toBeTruthy();
     });

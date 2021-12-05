@@ -8,6 +8,7 @@ import { I18N_MISSING_KEY, loadI18n } from 'lib-utils/src/testing/i18n';
 import App from '$/App';
 import AddConsent from '$/assets/locales/en/AddConsent.yaml';
 import Global from '$/assets/locales/en/Global.yaml';
+import store from '$/store';
 
 jest.mock('lib-api/src/consent', () => ({
   postConsent: jest.fn(),
@@ -22,12 +23,12 @@ describe('<App />', () => {
 
   describe('should render add consent entry screen', () => {
     test('without any form validation messages by default', () => {
-      const { container } = customRenderer(App);
+      const { container } = customRenderer(App, store);
       expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
     });
 
     test('with form validation messages when user clicks on submit and form is invalid', async () => {
-      const { container } = customRenderer(App);
+      const { container } = customRenderer(App, store);
       fireEvent.click(screen.getByText('AddConsent.addButton'));
       await waitFor(() => {
         expect(screen.getByText('AddConsent.errors.consents')).toBeTruthy();
@@ -49,7 +50,7 @@ describe('<App />', () => {
       };
 
       (postConsent as jest.Mock).mockResolvedValueOnce(mockEntry);
-      customRenderer(App);
+      customRenderer(App, store);
       const inputs = screen.getAllByRole('textbox');
       fireEvent.change(inputs[0], { target: { value: mockEntry.username } });
       fireEvent.change(inputs[1], { target: { value: mockEntry.email } });
@@ -67,7 +68,7 @@ describe('<App />', () => {
 
     test('displays toast message on error', async () => {
       (postConsent as jest.Mock).mockRejectedValueOnce('mock-error');
-      customRenderer(App);
+      customRenderer(App, store);
       const inputs = screen.getAllByRole('textbox');
 
       fireEvent.change(inputs[0], { target: { value: 'user6' } });

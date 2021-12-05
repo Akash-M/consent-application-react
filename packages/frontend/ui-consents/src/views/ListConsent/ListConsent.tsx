@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -16,23 +16,18 @@ export function ListConsent(): JSX.Element {
   );
 
   const fetchConsentList = () => {
-    console.log(consents.loading);
     dispatch(fetchConsents);
-    console.log(consents.loading);
   };
 
   useEffect(() => {
     void fetchConsentList();
-    console.log(consents.loading);
   }, []);
 
   return (
     <article className="list-consent">
       <h2>{t('ListConsent.header')}</h2>
 
-      <Suspense fallback={<div>{t('Global.loader')}</div>}>
-        <ListConsentGrid />
-      </Suspense>
+      {consents.loading ? <div>{t('Global.loader')}</div> : <ListConsentGrid />}
     </article>
   );
 }
