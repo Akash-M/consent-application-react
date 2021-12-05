@@ -32,13 +32,13 @@ yarn start:frontend
 ***NOTE:***
 If you need to run scripts for individual packages you can use the following commands:
 
-For `ui-device-monitor` package:
+For `ui-consents` package:
 
 ```sh
-yarn workspace ui-device-monitor start:dev --> to start the frontend app
-yarn workspace ui-device-monitor test:unit --> to run the tests
-yarn workspace ui-device-monitor lint --> to run the all the linters(eslint, prettier, stylelint)
-yarn workspace ui-device-monitor build --> to generate the distributions 
+yarn workspace ui-consents start:dev --> to start the frontend app
+yarn workspace ui-consents test:unit --> to run the tests
+yarn workspace ui-consents lint --> to run the all the linters(eslint, prettier, stylelint)
+yarn workspace ui-consents build --> to generate the distributions 
 ```
 
 For `lib-components` package:
