@@ -10279,13 +10279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.10.7":
-  version: 1.10.7
-  resolution: "dayjs@npm:1.10.7"
-  checksum: a0a4ca95abaa03d0702161dc2c35d16121188e342f5052b9c61cdf784dab68af766f477c04f87f71c6af666fd4d13db9b9853b87265850d6093b7b04e1bb1cd7
-  languageName: node
-  linkType: hard
-
 "debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.3.3, debug@npm:^2.6.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -12544,13 +12537,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flush-promises@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "flush-promises@npm:1.0.2"
-  checksum: 4451bfb21a11e64b8359c496cc875f7279a62c17e0cd3dba4adea83c098bb4497cdd8685d04dec46926d268e21e61b8d76cc92eedf396e18df8e501c9e9eb772
-  languageName: node
-  linkType: hard
-
 "flush-write-stream@npm:^1.0.0":
   version: 1.1.1
   resolution: "flush-write-stream@npm:1.1.1"
@@ -13367,13 +13353,6 @@ fsevents@^1.2.7:
   dependencies:
     duplexer: ^0.1.2
   checksum: 2df97f359696ad154fc171dcb55bc883fe6e833bca7a65e457b9358f3cb6312405ed70a8da24a77c1baac0639906cd52358dc0ce2ec1a937eaa631b934c94194
-  languageName: node
-  linkType: hard
-
-"hamt_plus@npm:1.0.2":
-  version: 1.0.2
-  resolution: "hamt_plus@npm:1.0.2"
-  checksum: af26ea32db03009019cc83dfa9411521a2fa16079443de1a502c9be46d8b3c975acda8ed93fc5750ef08d3186d35901e2d8cfe717dd54bea67b358601fa74e4c
   languageName: node
   linkType: hard
 
@@ -17293,7 +17272,6 @@ fsevents@^1.2.7:
     "@typescript-eslint/eslint-plugin": ^4.29.3
     "@typescript-eslint/parser": ^4.29.3
     consent-app-react: "workspace:*"
-    dayjs: ^1.10.7
     eslint: ^7.32.0
     eslint-config-prettier: ^7.2.0
     eslint-config-react-app: ^6.0.0
@@ -17324,18 +17302,17 @@ fsevents@^1.2.7:
     yaml: ^1.10.2
   peerDependencies:
     "@testing-library/react": "*"
-    dayjs: "*"
     i18next: "*"
     i18next-browser-languagedetector: "*"
     i18next-chained-backend: "*"
     i18next-localstorage-backend: "*"
     i18next-xhr-backend: "*"
-    jwt-decode: "*"
     react: "*"
     react-dom: "*"
     react-i18next: "*"
+    react-redux: "*"
     react-router-dom: "*"
-    recoil: "*"
+    redux: "*"
     yaml: "*"
   languageName: unknown
   linkType: soft
@@ -21484,22 +21461,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"recoil@npm:^0.5.2":
-  version: 0.5.2
-  resolution: "recoil@npm:0.5.2"
-  dependencies:
-    hamt_plus: 1.0.2
-  peerDependencies:
-    react: ">=16.13.1"
-  peerDependenciesMeta:
-    react-dom:
-      optional: true
-    react-native:
-      optional: true
-  checksum: 1daf09f969c2ffc0ac628dc4ac1306aef4e162506b0ed1700cc4aa1e68e921fad450d047843d49ba39510f24b87224e9d4ac74b1c6f111e1abeb5ba9cd2a3f78
-  languageName: node
-  linkType: hard
-
 "recursive-readdir@npm:2.2.2":
   version: 2.2.2
   resolution: "recursive-readdir@npm:2.2.2"
@@ -24963,7 +24924,6 @@ typescript@^4.3.5:
     eslint-plugin-react: ^7.26.1
     eslint-plugin-react-hooks: ^4.2.0
     eslint-plugin-testing-library: ^4.12.4
-    flush-promises: ^1.0.2
     fork-ts-checker-webpack-plugin: ^6.3.4
     html-webpack-plugin: ^5.3.2
     i18next: ^21.5.2
@@ -24996,7 +24956,6 @@ typescript@^4.3.5:
     react-router-dom: ^6.0.2
     react-test-renderer: ^17.0.2
     react-toastify: ^8.1.0
-    recoil: ^0.5.2
     redux: ^4.1.2
     redux-thunk: ^2.4.1
     resolve-url-loader: ^4.0.0

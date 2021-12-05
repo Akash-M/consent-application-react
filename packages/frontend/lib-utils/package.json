@@ -47,7 +47,6 @@
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "consent-app-react": "workspace:*",
-    "dayjs": "^1.10.7",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-config-react-app": "^6.0.0",
@@ -79,18 +78,17 @@
   },
   "peerDependencies": {
     "@testing-library/react": "*",
-    "dayjs": "*",
     "i18next": "*",
     "i18next-browser-languagedetector": "*",
     "i18next-chained-backend": "*",
     "i18next-localstorage-backend": "*",
     "i18next-xhr-backend": "*",
-    "jwt-decode": "*",
     "react": "*",
     "react-dom": "*",
     "react-i18next": "*",
+    "react-redux": "*",
     "react-router-dom": "*",
-    "recoil": "*",
+    "redux": "*",
     "yaml": "*"
   }
 }
