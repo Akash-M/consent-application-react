@@ -7,8 +7,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Akash-M/consent-app-react.git",
-    "directory": "packages/lib/api"
+    "url": "git@github.com:Akash-M/consent-application-react.git",
+    "directory": "packages/frontend/lib-api"
   },
   "author": "Akash-M <akash.manjunath@gmail.com>",
   "engines": {
