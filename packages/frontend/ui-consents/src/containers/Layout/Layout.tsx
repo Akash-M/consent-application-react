@@ -1,9 +1,7 @@
 /* eslint-disable import/named */
 import CssBaseline from '@mui/material/CssBaseline';
 import { Theme, ThemeProvider, createTheme } from '@mui/material/styles';
-import React, { lazy, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import {
   AppThemes,
@@ -13,14 +11,11 @@ import {
 
 import SiteHeader from '$/components/SiteHeader';
 import { ThemeContext } from '$/contexts/ThemeContext';
-import { AppRoutes } from '$/router/routes';
-import AddConsent from '$/views/AddConsent';
+import AppNavigation from '$/routes/AppNavigation';
+import AppRoutes from '$/routes/AppRouter';
 import './Layout.scss';
 
 export function Layout(): JSX.Element {
-  const { t } = useTranslation(['Global']);
-  const ListConsent = lazy(() => import('$/views/ListConsent'));
-
   const [appTheme, setAppTheme] = useState<AppThemes>(AppThemes.Light);
 
   const theme: Theme = createTheme(
@@ -35,28 +30,10 @@ export function Layout(): JSX.Element {
         <SiteHeader />
 
         <article className="layout">
-          <aside className="layout__links">
-            <NavLink to={`/${AppRoutes.AddConsent}`}>
-              {t('Global.headers.addConsent')}
-            </NavLink>
-
-            <NavLink to={`/${AppRoutes.ListConsent}`}>
-              {t('Global.headers.listConsent')}
-            </NavLink>
-          </aside>
+          <AppNavigation />
 
           <section className="layout__screens">
-            <Routes>
-              <Route
-                element={<AddConsent />}
-                path={`/${AppRoutes.AddConsent}`}
-              />
-
-              <Route
-                element={<ListConsent />}
-                path={`/${AppRoutes.ListConsent}`}
-              />
-            </Routes>
+            <AppRoutes />
           </section>
         </article>
       </ThemeProvider>
