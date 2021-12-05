@@ -23,16 +23,43 @@ You can test if yarn is installed correctly by using:
 yarn --version
 ```
 
-Upgrade dependencies:
-
-```sh
-npx yarn-upgrade-all
-```
-
 Start the frontend
 
 ```sh
 yarn start:frontend
+```
+
+***NOTE:***
+If you need to run scripts for individual packages you can use the following commands:
+
+For `ui-device-monitor` package:
+
+```sh
+yarn workspace ui-device-monitor start:dev --> to start the frontend app
+yarn workspace ui-device-monitor test:unit --> to run the tests
+yarn workspace ui-device-monitor lint --> to run the all the linters(eslint, prettier, stylelint)
+yarn workspace ui-device-monitor build --> to generate the distributions 
+```
+
+For `lib-components` package:
+
+```sh
+yarn workspace lib-components start:dev --> to start storybook and render the custom components
+yarn workspace lib-components lint --> to run the all the linters(eslint, prettier, stylelint)
+yarn workspace lib-components build --> to generate the distributions for storybook
+```
+
+For `lib-api` package:
+
+```sh
+yarn workspace lib-api lint --> to run all the linters(eslint, prettier)
+yarn workspace lib-api test:unit --> to run the tests
+```
+
+For `lib-utils` package:
+
+```sh
+yarn workspace lib-utils lint --> to run all the linters(eslint, prettier) 
 ```
 
 ### Further documentation:

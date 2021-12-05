@@ -4,8 +4,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "exec:docker-compose": "docker-compose -f docker-compose.yaml",
     "exec:eslint": "eslint --cache",
-    "start:frontend": "yarn workspace ui-consents start:dev"
+    "exec:prettier": "prettier",
+    "prettier": "yarn exec:prettier -c .",
+    "prettier:fix": "yarn exec:prettier -w .",
+    "start:docker": "yarn exec:docker-compose up -d ui-consents",
+    "start:frontend": "yarn workspace ui-consents start:dev",
+    "start:storybook": "yarn workspace lib-components start:dev"
   },
   "dependencies": {
     "@commitlint/cli": "^12.1.4",
