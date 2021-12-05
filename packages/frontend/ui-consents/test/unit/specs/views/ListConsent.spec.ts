@@ -10,15 +10,11 @@ import App from '$/App';
 import AddConsent from '$/assets/locales/en/AddConsent.yaml';
 import Global from '$/assets/locales/en/Global.yaml';
 import ListConsent from '$/assets/locales/en/ListConsent.yaml';
-import { ConsentListState } from '$/store/consents/atoms';
+import store from '$/store';
 
 jest.mock('lib-api/src/consent', () => ({
   getConsents: jest.fn(),
 }));
-
-const initializeState = ({ set }: any) => {
-  set(ConsentListState, consentListFixtures);
-};
 
 describe('<App />', () => {
   beforeAll(() => {
@@ -27,38 +23,10 @@ describe('<App />', () => {
 
   beforeEach(jest.clearAllMocks);
 
-  describe('should render after making api call to getConsents', () => {
-    test('a list of consents with 2 entries by default on api success', async () => {
-      (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
-      const { container } = customRenderer(App, initializeState);
-      fireEvent.click(screen.getByText('Global.headers.listConsent'));
-      await waitFor(() => {
-        expect(screen.getByText('Global.loader')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user1@email.com')).toBeTruthy();
-      });
-      await waitFor(() => {
-        expect(screen.getByText('user2@email.com')).toBeTruthy();
-      });
-      expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
-    });
-
-    test('error on api error', async () => {
-      (getConsents as jest.Mock).mockRejectedValueOnce('mock-error');
-      const { container } = customRenderer(App, initializeState);
-      fireEvent.click(screen.getByText('Global.headers.listConsent'));
-      await waitFor(() => {
-        expect(screen.getByText('ListConsent.errors.api')).toBeTruthy();
-      });
-      expect(container.firstChild!.textContent).not.toContain(I18N_MISSING_KEY);
-    });
-  });
-
   describe('should update grid entries', () => {
     test('display second page when user clicks on next page and then back', async () => {
       (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
-      customRenderer(App, initializeState);
+      customRenderer(App, store);
       fireEvent.click(screen.getByText('Global.headers.listConsent'));
       await waitFor(() => {
         expect(screen.getByText('user1@email.com')).toBeTruthy();
@@ -84,7 +52,7 @@ describe('<App />', () => {
 
     test('display grid entries in descending order', async () => {
       (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
-      customRenderer(App, initializeState);
+      customRenderer(App, store);
       fireEvent.click(screen.getByText('Global.headers.listConsent'));
       await waitFor(() => {
         expect(screen.getByText('user1@email.com')).toBeTruthy();
@@ -101,6 +69,33 @@ describe('<App />', () => {
       });
     });
 
-    // TODO: add test for updating rows per page.
+    describe('should render after making api call to getConsents', () => {
+      test('a list of consents with 2 entries by default on api success', async () => {
+        (getConsents as jest.Mock).mockResolvedValueOnce(consentListFixtures);
+        const { container } = customRenderer(App, store);
+        fireEvent.click(screen.getByText('Global.headers.listConsent'));
+        await waitFor(() => {
+          expect(screen.getByText('user1@email.com')).toBeTruthy();
+        });
+        await waitFor(() => {
+          expect(screen.getByText('user2@email.com')).toBeTruthy();
+        });
+        expect(container.firstChild!.textContent).not.toContain(
+          I18N_MISSING_KEY,
+        );
+      });
+
+      test('error on api error', async () => {
+        (getConsents as jest.Mock).mockRejectedValueOnce('mock-error');
+        const { container } = customRenderer(App, store);
+        fireEvent.click(screen.getByText('Global.headers.listConsent'));
+        await waitFor(() => {
+          expect(screen.getByText('ListConsent.errors.api')).toBeTruthy();
+        });
+        expect(container.firstChild!.textContent).not.toContain(
+          I18N_MISSING_KEY,
+        );
+      });
+    });
   });
 });

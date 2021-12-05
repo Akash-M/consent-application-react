@@ -2,21 +2,23 @@
 import { DataGrid, GridSortModel } from '@mui/x-data-grid';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue } from 'recoil';
+import { useSelector } from 'react-redux';
 
-import {
-  ConsentListPaginatorState,
-  ConsentListState,
-} from '$/store/consents/atoms';
+import { ApplicationState } from '$/store';
 import './ListConsentGrid.scss';
 import { ToolBar } from './ToolBar';
-import { filterModel, generateColumnModel, sortModel } from './grid-config';
+import {
+  PerPage,
+  filterModel,
+  generateColumnModel,
+  sortModel,
+} from './grid-config';
 
 export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
-
-  const paginator = useRecoilValue(ConsentListPaginatorState);
-  const consentList = useRecoilValue(ConsentListState);
+  const consentsState = useSelector(
+    (state: ApplicationState) => state.consentsReducer,
+  );
 
   const columns = generateColumnModel(t);
 
@@ -24,23 +26,27 @@ export function ListConsentGrid(): JSX.Element {
 
   return (
     <section className="list-consent-table">
-      <DataGrid
-        pagination
-        autoHeight={true}
-        className="consent-grid"
-        columns={columns}
-        components={{
-          Toolbar: ToolBar,
-        }}
-        disableColumnMenu={true}
-        disableSelectionOnClick={true}
-        initialState={{ filter: filterModel.filter }}
-        pageSize={paginator.perPage}
-        rows={consentList}
-        rowsPerPageOptions={[2]}
-        sortModel={sortConfig}
-        onSortModelChange={(model) => setSortConfig(model)}
-      />
+      {consentsState.error ? (
+        <div>{t('ListConsent.errors.api')}</div>
+      ) : (
+        <DataGrid
+          pagination
+          autoHeight={true}
+          className="consent-grid"
+          columns={columns}
+          components={{
+            Toolbar: ToolBar,
+          }}
+          disableColumnMenu={true}
+          disableSelectionOnClick={true}
+          initialState={{ filter: filterModel.filter }}
+          pageSize={PerPage}
+          rows={consentsState.consents}
+          rowsPerPageOptions={[PerPage]}
+          sortModel={sortConfig}
+          onSortModelChange={(model) => setSortConfig(model)}
+        />
+      )}
     </section>
   );
 }
