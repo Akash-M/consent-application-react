@@ -11,11 +11,9 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
 import { postConsent } from 'lib-api/src/consent';
+import { EMAIL_REGEX } from 'lib-utils/src/email-regex';
 
 import './AddConsent.scss';
-
-// TODO: move to lib-utils
-const EmailRegex = /^\S+@\S+$/i;
 
 export function AddConsent(): JSX.Element {
   const { t } = useTranslation(['AddConsent']);
@@ -53,7 +51,7 @@ export function AddConsent(): JSX.Element {
   const validateForm = () => {
     if (
       formData.username.length > 0 &&
-      EmailRegex.test(formData.email) &&
+      EMAIL_REGEX.test(formData.email) &&
       areConsentsValid()
     ) {
       setIsFormValid(true);
@@ -102,7 +100,7 @@ export function AddConsent(): JSX.Element {
             required
             className="text-field"
             defaultValue={formData.email}
-            error={!isFormValid && !EmailRegex.test(formData.email)}
+            error={!isFormValid && !EMAIL_REGEX.test(formData.email)}
             label={t('AddConsent.email')}
             name="email"
             variant="standard"

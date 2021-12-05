@@ -1,0 +1,21 @@
+version: '3.9'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  ui-consents:
+    image: ui-consents:1.0
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: packages/frontend/Dockerfile
+    ports:
+      - 8080:80
+    hostname: consents.dev.app
+    networks:
+      - dev
+    volumes:
+      - ./dev/config/frontend/nginx:/usr/src/app/nginx
+    container_name: ui-consents

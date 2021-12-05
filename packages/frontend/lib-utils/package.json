@@ -7,7 +7,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Akash-M/consent-app-react.git",
+    "url": "git@github.com:Akash-M/consent-application-react.git",
     "directory": "packages/lib/utils"
   },
   "author": "Akash-M <akash.manjunath@gmail.com>",
@@ -15,16 +15,11 @@
     "node": ">=v14.17.6"
   },
   "scripts": {
-    "docs": "run exec:typedoc --tsconfig $(pwd)/tsconfig.build.json --out $(pwd)/typedoc $(pwd)/src",
     "build": "echo 'no build process required'",
     "lint:prettier": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint:ts": "run exec:eslint --cache-file $(pwd)/.eslintcache $(pwd)",
     "lint": "yarn lint:ts && yarn prettier",
-    "prettier": "prettier -c \"src/**/*.{js,ts,tsx}\"",
-    "test:unit": "jest --config test/unit/jest.config.js --coverage",
-    "test:unit:update": "yarn test:unit -u",
-    "test:unit:watch": "yarn test:unit --watch",
-    "test": "yarn test:unit"
+    "prettier": "prettier -c \"src/**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "#": "link:./test",

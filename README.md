@@ -9,6 +9,8 @@ React app to collect consents based on https://github.com/didomi/challenges/tree
 [![lib-utils](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/lib-utils.yaml)
 [![ui-consents](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml/badge.svg)](https://github.com/Akash-M/consent-application-react/actions/workflows/ui-consents.yaml)
 
+## [Live Demo](https://akash-m.github.io/)
+
 ## Prerequisites
 
 ### Package Manager
@@ -23,16 +25,69 @@ You can test if yarn is installed correctly by using:
 yarn --version
 ```
 
-Upgrade dependencies:
+### Step 1: Install dependencies:
 
 ```sh
-npx yarn-upgrade-all
+yarn
 ```
 
-Start the frontend
+### Step 2: Start the frontend app:
+
+Start `ui-consents` app
 
 ```sh
 yarn start:frontend
+```
+
+### Step 3(Optional): Run storybook to display component library:
+
+Start `lib-components` app
+
+```sh
+yarn start:storybook
+```
+
+### Step 4(Optional): Starting `ui-consents` using Docker
+
+Ensure that docker is running on your machine. Then, run the following script:
+
+```sh
+yarn start:docker
+```
+
+Once the docker container is built, `ui-consents` app can be accessed on `0.0.0.0:8080/`.
+
+***NOTE:***
+If you need to run scripts for individual packages you can use the following commands:
+
+For `ui-consents` package:
+
+```sh
+yarn workspace ui-consents start:dev --> to start the frontend app
+yarn workspace ui-consents test:unit --> to run the tests
+yarn workspace ui-consents lint --> to run the all the linters(eslint, prettier, stylelint)
+yarn workspace ui-consents build --> to generate the distributions 
+```
+
+For `lib-components` package:
+
+```sh
+yarn workspace lib-components start:dev --> to start storybook and render the custom components
+yarn workspace lib-components lint --> to run the all the linters(eslint, prettier, stylelint)
+yarn workspace lib-components build --> to generate the distributions for storybook
+```
+
+For `lib-api` package:
+
+```sh
+yarn workspace lib-api lint --> to run all the linters(eslint, prettier)
+yarn workspace lib-api test:unit --> to run the tests
+```
+
+For `lib-utils` package:
+
+```sh
+yarn workspace lib-utils lint --> to run all the linters(eslint, prettier) 
 ```
 
 ### Further documentation:
