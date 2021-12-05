@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { ApplicationState } from '$/state';
+import { ApplicationState } from '$/store';
 import './ListConsentGrid.scss';
 import { ToolBar } from './ToolBar';
 import {

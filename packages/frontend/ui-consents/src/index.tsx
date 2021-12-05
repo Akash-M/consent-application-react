@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import setI18n from 'lib-utils/src/i18n';
 
 import App from '$/App';
-import store from '$/state';
+import store from '$/store';
 
 export function Root(): JSX.Element {
   return (
