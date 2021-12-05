@@ -10436,6 +10436,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/redux", [
+        ["npm:3.6.31", {
+          "packageLocation": "./.yarn/cache/@types-redux-npm-3.6.31-24651ced98-7bfaa5c539.zip/node_modules/@types/redux/",
+          "packageDependencies": [
+            ["@types/redux", "npm:3.6.31"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/redux-thunk", [
+        ["npm:2.1.32", {
+          "packageLocation": "./.yarn/cache/@types-redux-thunk-npm-2.1.32-124f1c8fe3-9f20ef229a.zip/node_modules/@types/redux-thunk/",
+          "packageDependencies": [
+            ["@types/redux-thunk", "npm:2.1.32"],
+            ["redux", "npm:3.7.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/retry", [
         ["npm:0.12.1", {
           "packageLocation": "./.yarn/cache/@types-retry-npm-0.12.1-05f3303aac-5f46b25560.zip/node_modules/@types/retry/",
@@ -24824,6 +24843,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["lodash-es", [
+        ["npm:4.17.21", {
+          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.21-b45832dfce-05cbffad6e.zip/node_modules/lodash-es/",
+          "packageDependencies": [
+            ["lodash-es", "npm:4.17.21"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["lodash.clonedeep", [
         ["npm:4.5.0", {
           "packageLocation": "./.yarn/cache/lodash.clonedeep-npm-4.5.0-fbc3cda4e5-92c46f094b.zip/node_modules/lodash.clonedeep/",
@@ -29942,6 +29970,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["redux", [
+        ["npm:3.7.2", {
+          "packageLocation": "./.yarn/cache/redux-npm-3.7.2-0f79fccafa-c349b77e68.zip/node_modules/redux/",
+          "packageDependencies": [
+            ["redux", "npm:3.7.2"],
+            ["lodash", "npm:4.17.21"],
+            ["lodash-es", "npm:4.17.21"],
+            ["loose-envify", "npm:1.4.0"],
+            ["symbol-observable", "npm:1.2.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.1.2", {
           "packageLocation": "./.yarn/cache/redux-npm-4.1.2-04cdbe7a08-6a839cee5b.zip/node_modules/redux/",
           "packageDependencies": [
@@ -29963,7 +30002,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/redux-thunk-virtual-058f9f55ca/0/cache/redux-thunk-npm-2.4.1-2ba08bf615-af5abb425f.zip/node_modules/redux-thunk/",
           "packageDependencies": [
             ["redux-thunk", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#npm:2.4.1"],
-            ["@types/redux", null],
+            ["@types/redux", "npm:3.6.31"],
             ["redux", "npm:4.1.2"]
           ],
           "packagePeers": [
@@ -32778,6 +32817,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["symbol-observable", [
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/symbol-observable-npm-1.2.0-9e812a0a39-48ffbc22e3.zip/node_modules/symbol-observable/",
+          "packageDependencies": [
+            ["symbol-observable", "npm:1.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["symbol-tree", [
         ["npm:3.2.4", {
           "packageLocation": "./.yarn/cache/symbol-tree-npm-3.2.4-fe70cdb75b-6e8fc7e148.zip/node_modules/symbol-tree/",
@@ -34108,6 +34156,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-redux", "npm:7.1.20"],
             ["@types/react-router-dom", "npm:5.3.2"],
             ["@types/react-test-renderer", "npm:17.0.1"],
+            ["@types/redux", "npm:3.6.31"],
+            ["@types/redux-thunk", "npm:2.1.32"],
             ["@types/webpack", "npm:5.28.0"],
             ["@types/webpack-dev-server", "npm:3.11.6"],
             ["@typescript-eslint/eslint-plugin", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],

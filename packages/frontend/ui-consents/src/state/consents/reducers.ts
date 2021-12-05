@@ -1,14 +1,32 @@
+// eslint-disable-next-line import/named
 import { consentsState } from './state';
-import { ConsentsActions, ConsentsState } from './types';
+import {
+  CONSENTS_ERROR,
+  CONSENTS_LOADING,
+  CONSENTS_SUCCESS,
+  ConsentsDispatchType,
+  ConsentsState,
+} from './types';
 
 export const consentsReducer = (
   state = consentsState,
-  action: { type: ConsentsActions },
+  action: ConsentsDispatchType,
 ): ConsentsState => {
   switch (action.type) {
-    case ConsentsActions.FETCH_CONSENTS:
+    case CONSENTS_LOADING:
       return {
         ...state,
+        loading: true,
+      };
+    case CONSENTS_ERROR:
+      return {
+        ...state,
+        loading: false,
+      };
+    case CONSENTS_SUCCESS:
+      return {
+        loading: false,
+        consents: action.payload,
       };
     default:
       return state;

@@ -2,9 +2,9 @@
 import { DataGrid, GridSortModel } from '@mui/x-data-grid';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue } from 'recoil';
+import { useSelector } from 'react-redux';
 
-import { ConsentListState } from '$/store/consents/atoms';
+import { ApplicationState } from '$/state';
 import './ListConsentGrid.scss';
 import { ToolBar } from './ToolBar';
 import {
@@ -16,8 +16,9 @@ import {
 
 export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
-
-  const consentList = useRecoilValue(ConsentListState);
+  const consentList = useSelector(
+    (state: ApplicationState) => state.consentsReducer.consents,
+  );
 
   const columns = generateColumnModel(t);
 

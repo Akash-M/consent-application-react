@@ -4,7 +4,6 @@ import { Theme, ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
 
 import {
   AppThemes,
@@ -14,7 +13,6 @@ import {
 
 import SiteHeader from '$/components/SiteHeader';
 import { AppRoutes } from '$/router/routes';
-import { AppThemeState } from '$/store/consents/atoms';
 import AddConsent from '$/views/AddConsent';
 import ListConsent from '$/views/ListConsent';
 import './Layout.scss';
@@ -22,7 +20,8 @@ import './Layout.scss';
 export function Layout(): JSX.Element {
   const { t } = useTranslation(['Global']);
 
-  const currentTheme = useRecoilValue(AppThemeState);
+  // const currentTheme = useRecoilValue(AppThemeState);
+  const currentTheme = AppThemes.Light;
 
   const theme: Theme = createTheme(
     currentTheme === AppThemes.Light ? lightTheme : darkTheme,

@@ -1,31 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { toast } from 'react-toastify';
-import { useSetRecoilState } from 'recoil';
-
-import { getConsents } from 'lib-api/src/consent';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ListConsentGrid from '$/components/list-consent/ListConsentGrid';
-import { ConsentListState } from '$/store/consents/atoms';
+import { ApplicationState } from '$/state';
+import { fetchConsents } from '$/state/consents/actions';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
   const { t } = useTranslation(['ListConsent']);
+  const dispatch = useDispatch();
 
-  const setConsentList = useSetRecoilState(ConsentListState);
-  const [loading, setLoading] = useState(false);
+  const loading = useSelector(
+    (state: ApplicationState) => state.consentsReducer.loading,
+  );
 
-  const fetchConsentList = async () => {
-    setLoading(true);
-    try {
-      setConsentList(await getConsents());
-    } catch {
-      toast.error(t('ListConsent.errors.api'), {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
-    } finally {
-      setLoading(false);
-    }
+  const fetchConsentList = () => {
+    dispatch(fetchConsents);
   };
 
   useEffect(() => {
