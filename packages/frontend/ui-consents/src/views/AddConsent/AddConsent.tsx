@@ -9,11 +9,9 @@ import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { useSetRecoilState } from 'recoil';
 
 import { postConsent } from 'lib-api/src/consent';
 
-import { ConsentListState } from '$/store/consents/atoms';
 import './AddConsent.scss';
 
 // TODO: move to lib-utils
@@ -21,8 +19,6 @@ const EmailRegex = /^\S+@\S+$/i;
 
 export function AddConsent(): JSX.Element {
   const { t } = useTranslation(['AddConsent']);
-
-  const setConsentList = useSetRecoilState(ConsentListState);
 
   const [formData, setFormData] = useState<Consent.NewEntry>({
     username: '',
@@ -71,8 +67,7 @@ export function AddConsent(): JSX.Element {
     /* istanbul ignore else */
     if (isFormValid) {
       try {
-        const response = await postConsent(formData);
-        setConsentList((oldConsentList) => [response, ...oldConsentList]);
+        await postConsent(formData);
         toast.success(t('AddConsent.success'), {
           position: toast.POSITION.BOTTOM_RIGHT,
         });
