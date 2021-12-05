@@ -18,7 +18,6 @@ export const fetchConsents = async (
       type: CONSENTS_LOADING,
     });
     const response = await getConsents();
-    // throw new Error('mock-error');
     dispatch({
       type: CONSENTS_SUCCESS,
       payload: response,

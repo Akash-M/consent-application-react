@@ -16,8 +16,8 @@ import {
 
 export function ListConsentGrid(): JSX.Element {
   const { t } = useTranslation();
-  const consentList = useSelector(
-    (state: ApplicationState) => state.consentsReducer.consents,
+  const consentsState = useSelector(
+    (state: ApplicationState) => state.consentsReducer,
   );
 
   const columns = generateColumnModel(t);
@@ -26,23 +26,27 @@ export function ListConsentGrid(): JSX.Element {
 
   return (
     <section className="list-consent-table">
-      <DataGrid
-        pagination
-        autoHeight={true}
-        className="consent-grid"
-        columns={columns}
-        components={{
-          Toolbar: ToolBar,
-        }}
-        disableColumnMenu={true}
-        disableSelectionOnClick={true}
-        initialState={{ filter: filterModel.filter }}
-        pageSize={PerPage}
-        rows={consentList}
-        rowsPerPageOptions={[PerPage]}
-        sortModel={sortConfig}
-        onSortModelChange={(model) => setSortConfig(model)}
-      />
+      {consentsState.error ? (
+        <div>{t('ListConsent.errors.api')}</div>
+      ) : (
+        <DataGrid
+          pagination
+          autoHeight={true}
+          className="consent-grid"
+          columns={columns}
+          components={{
+            Toolbar: ToolBar,
+          }}
+          disableColumnMenu={true}
+          disableSelectionOnClick={true}
+          initialState={{ filter: filterModel.filter }}
+          pageSize={PerPage}
+          rows={consentsState.consents}
+          rowsPerPageOptions={[PerPage]}
+          sortModel={sortConfig}
+          onSortModelChange={(model) => setSortConfig(model)}
+        />
+      )}
     </section>
   );
 }

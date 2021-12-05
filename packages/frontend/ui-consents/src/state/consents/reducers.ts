@@ -22,9 +22,11 @@ export const consentsReducer = (
       return {
         ...state,
         loading: false,
+        error: true,
       };
     case CONSENTS_SUCCESS:
       return {
+        ...state,
         loading: false,
         consents: action.payload,
       };

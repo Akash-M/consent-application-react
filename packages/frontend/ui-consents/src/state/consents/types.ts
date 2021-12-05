@@ -1,6 +1,7 @@
 export interface ConsentsState {
   loading: boolean;
   consents: Consent.Detail[];
+  error: boolean;
 }
 
 export const CONSENTS_LOADING = 'CONSENTS_LOADING';
