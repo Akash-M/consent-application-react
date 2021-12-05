@@ -8,7 +8,7 @@ import {
   CONSENTS_LOADING,
   CONSENTS_SUCCESS,
   ConsentsDispatchType,
-} from '$/state/consents/types';
+} from '$/store/consents/types';
 
 export const fetchConsents = async (
   dispatch: Dispatch<ConsentsDispatchType>,

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ListConsentGrid from '$/components/list-consent/ListConsentGrid';
-import { fetchConsents } from '$/state/consents/actions';
 import { ApplicationState } from '$/store';
+import { fetchConsents } from '$/store/consents/actions';
 import './ListConsent.scss';
 
 export function ListConsent(): JSX.Element {
