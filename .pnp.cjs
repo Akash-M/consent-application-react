@@ -95,14 +95,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["#", [
-        ["link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components", {
-          "packageLocation": "./packages/frontend/lib-components/test/",
-          "packageDependencies": [
-            ["#", "link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"]
-          ],
-          "linkType": "SOFT",
-          "discardFromLookup": true
-        }],
         ["link:./test::locator=lib-utils%40workspace%3Apackages%2Ffrontend%2Flib-utils", {
           "packageLocation": "./packages/frontend/lib-utils/test/",
           "packageDependencies": [
@@ -24096,7 +24088,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/lib-components-virtual-24dab08896/1/packages/frontend/lib-components/",
           "packageDependencies": [
             ["lib-components", "virtual:e22e3984cfa3d514a460492298fd0d6e7cb27aa8e2357b03c85ebd027d00552ec812e4b9e6ee1f8f9fde515a9b543eede6d3f5c30113e3b5c7b2dd4ca5be330e#workspace:packages/frontend/lib-components"],
-            ["#", "link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"],
             ["$", "link:./src::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"],
             ["@babel/core", "npm:7.16.0"],
             ["@babel/plugin-proposal-class-properties", "virtual:3a43af9903ed46e5a4f3b2dee814c6d144478ad9aeaf0416205a3ea3def3209eba6a06d1c3645abeed8c0d8de146b29bd035def93e5bfe329a601f78220abe65#npm:7.16.0"],
@@ -24218,7 +24209,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/frontend/lib-components/",
           "packageDependencies": [
             ["lib-components", "workspace:packages/frontend/lib-components"],
-            ["#", "link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"],
             ["$", "link:./src::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"],
             ["@babel/core", "npm:7.16.0"],
             ["@babel/plugin-proposal-class-properties", "virtual:3a43af9903ed46e5a4f3b2dee814c6d144478ad9aeaf0416205a3ea3def3209eba6a06d1c3645abeed8c0d8de146b29bd035def93e5bfe329a601f78220abe65#npm:7.16.0"],

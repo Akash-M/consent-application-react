@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['kirinus'],
+  extends: ['kirinus'], // This is an open source eslint definition.
   parserOptions: {
     project: ['./tsconfig.eslint.json', './packages/*/*/tsconfig.json'],
     tsconfigRootDir: __dirname,
@@ -14,16 +14,7 @@ module.exports = {
   },
   ignorePatterns: ['**/storybook-static/*.js'],
   rules: {
-    '@typescript-eslint/naming-convention': 'warn',
-    '@typescript-eslint/no-misused-promises': [
-      'error',
-      {
-        checksVoidReturn: false,
-      },
-    ],
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unsafe-call': 'warn',
-    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
     'ordered-imports/ordered-imports': [
       'error',
@@ -49,8 +40,6 @@ module.exports = {
       },
     ],
     'eslint-comments/disable-enable-pair': 'off',
-    'jsx-a11y/no-onchange': 'off',
-    'no-self-assign': 'off',
     'react/jsx-sort-props': [
       'error',
       {
@@ -60,28 +49,11 @@ module.exports = {
         reservedFirst: true,
       },
     ],
-    'unicorn/consistent-function-scoping': 'warn',
+    'react-hooks/exhaustive-deps': 'off',
+    'unicorn/consistent-function-scoping': 'off',
     'unicorn/filename-case': 'off',
-    'unicorn/no-useless-undefined': 'off',
-    'unicorn/no-null': 'off',
-    'unicorn/numeric-separators-style': 'off',
+    'unicorn/prefer-add-event-listener': 'off',
     'unicorn/prefer-node-protocol': 'off',
-    'unicorn/no-array-callback-reference': 'off',
     'unicorn/prevent-abbreviations': 'off',
   },
-  overrides: [
-    /**
-     * Jest
-     */
-    {
-      files: ['**/*.spec.ts', '**/*.test.ts', '**/test/**'],
-      rules: {
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
-        '@typescript-eslint/unbound-method': 'off',
-        'unicorn/no-array-callback-reference': 'off',
-      },
-    },
-  ],
 };
