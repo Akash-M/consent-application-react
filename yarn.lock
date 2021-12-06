@@ -5,12 +5,6 @@ __metadata:
   version: 4
   cacheKey: 8
 
-"#@link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components":
-  version: 0.0.0-use.local
-  resolution: "#@link:./test::locator=lib-components%40workspace%3Apackages%2Ffrontend%2Flib-components"
-  languageName: node
-  linkType: soft
-
 "#@link:./test::locator=lib-utils%40workspace%3Apackages%2Ffrontend%2Flib-utils":
   version: 0.0.0-use.local
   resolution: "#@link:./test::locator=lib-utils%40workspace%3Apackages%2Ffrontend%2Flib-utils"
@@ -17148,7 +17142,6 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "lib-components@workspace:packages/frontend/lib-components"
   dependencies:
-    "#": "link:./test"
     $: "link:./src"
     "@babel/core": ^7.15.8
     "@babel/plugin-proposal-class-properties": ^7.14.5

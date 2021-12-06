@@ -15,14 +15,12 @@
     "node": ">=v14.17.6"
   },
   "scripts": {
-    "build": "build-storybook --quiet --loglevel error -o build",
     "lint:prettier": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint:scss": "stylelint src/**/*.scss",
     "lint:ts": "run exec:eslint --cache-file $(pwd)/.eslintcache $(pwd)",
     "lint": "yarn lint:ts && yarn prettier && yarn lint:scss",
     "prettier": "prettier -c \"src/**/*.{js,ts,tsx,scss}\"",
-    "prettier:fix": "prettier --write \"**/*.{js,ts,tsx,scss}\"",
-    "start:dev": "start-storybook -p 6000"
+    "prettier:fix": "prettier --write \"**/*.{js,ts,tsx,scss}\""
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -34,7 +32,6 @@
     "react-docgen-typescript": "^2.1.1"
   },
   "devDependencies": {
-    "#": "link:./test",
     "$": "link:./src",
     "@babel/core": "^7.15.8",
     "@babel/plugin-proposal-class-properties": "^7.14.5",

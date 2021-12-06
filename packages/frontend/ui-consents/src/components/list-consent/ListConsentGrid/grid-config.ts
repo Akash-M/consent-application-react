@@ -11,12 +11,12 @@ import { ToolTip } from './ToolTip';
 
 export const PerPage = 2;
 
-export enum SortFields {
+enum SortFields {
   Username = 'username',
   Email = 'email',
 }
 
-export enum SortDirection {
+enum SortDirection {
   Ascending = 'asc',
   Descending = 'desc',
 }
@@ -79,7 +79,7 @@ export const generateColumnModel = (
       field: 'consent',
       headerName: t('ListConsent.table.headers.consent'),
       filterable: false,
-      renderCell: (params: any) => {
+      renderCell: (params: { row: Consent.Detail }) => {
         return ToolTip({ value: generateConsentText(params.row.consent, t) });
       },
       valueGetter: (params: GridValueGetterParams) => {
