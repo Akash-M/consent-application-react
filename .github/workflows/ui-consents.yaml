@@ -32,4 +32,4 @@ jobs:
       - name: Run test:unit
         run: yarn workspace ui-consents test:unit
       - name: Run build
-        run: yarn workspace lib-components build
+        run: yarn workspace ui-consents build
