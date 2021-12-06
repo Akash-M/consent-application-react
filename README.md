@@ -47,7 +47,7 @@ Ensure that docker is running on your machine. Then, run the following script:
 yarn start:docker
 ```
 
-Once the docker container is built, `ui-consents` app can be accessed on `0.0.0.0:8080/`.
+Once the docker container is built, `ui-consents` app can be accessed on `0.0.0.0:8080/` or `127.0.0.1:8080/`.
 
 ***NOTE:***
 If you need to run scripts for individual packages you can use the following commands:
