@@ -39,15 +39,7 @@ Start `ui-consents` app
 yarn start:frontend
 ```
 
-### Step 3(Optional): Run storybook to display component library:
-
-Start `lib-components` app
-
-```sh
-yarn start:storybook
-```
-
-### Step 4(Optional): Starting `ui-consents` using Docker
+### Step 3(Optional): Starting `ui-consents` using Docker
 
 Ensure that docker is running on your machine. Then, run the following script:
 
