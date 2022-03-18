@@ -9942,6 +9942,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/history", [
+        ["npm:4.7.11", {
+          "packageLocation": "./.yarn/cache/@types-history-npm-4.7.11-fe05d7b2e1-c92e2ba407.zip/node_modules/@types/history/",
+          "packageDependencies": [
+            ["@types/history", "npm:4.7.11"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.7.9", {
           "packageLocation": "./.yarn/cache/@types-history-npm-4.7.9-daa6588d04-556b062adb.zip/node_modules/@types/history/",
           "packageDependencies": [
@@ -10387,11 +10394,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/react-router-dom", [
-        ["npm:5.3.2", {
-          "packageLocation": "./.yarn/cache/@types-react-router-dom-npm-5.3.2-85c77b2709-90f052dc5a.zip/node_modules/@types/react-router-dom/",
+        ["npm:5.3.3", {
+          "packageLocation": "./.yarn/cache/@types-react-router-dom-npm-5.3.3-9f687b5b3a-28c4ea4890.zip/node_modules/@types/react-router-dom/",
           "packageDependencies": [
-            ["@types/react-router-dom", "npm:5.3.2"],
-            ["@types/history", "npm:4.7.9"],
+            ["@types/react-router-dom", "npm:5.3.3"],
+            ["@types/history", "npm:4.7.11"],
             ["@types/react", "npm:17.0.35"],
             ["@types/react-router", "npm:5.1.17"]
           ],
@@ -24124,7 +24131,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-hook-form", null],
             ["@types/react-router", "npm:5.1.17"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/typescript", null],
             ["@types/webpack", "npm:5.28.0"],
             ["@types/webpack-dev-server", "npm:4.5.0"],
@@ -24239,7 +24246,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.35"],
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-router", "npm:5.1.17"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/webpack", "npm:5.28.0"],
             ["@types/webpack-dev-server", "npm:4.5.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
@@ -24322,7 +24329,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-i18next", null],
             ["@types/react-redux", "npm:7.1.20"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/redux", "npm:3.6.31"],
             ["@types/testing-library__react", null],
             ["@types/yaml", null],
@@ -24401,7 +24408,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-i18next", null],
             ["@types/react-redux", "npm:7.1.20"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/redux", "npm:3.6.31"],
             ["@types/testing-library__react", null],
             ["@types/yaml", null],
@@ -24480,7 +24487,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-i18next", null],
             ["@types/react-redux", "npm:7.1.20"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/redux", "npm:3.6.31"],
             ["@types/testing-library__react", null],
             ["@types/yaml", null],
@@ -24565,7 +24572,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.35"],
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-redux", "npm:7.1.20"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/redux", "npm:3.6.31"],
             ["@typescript-eslint/eslint-plugin", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
             ["@typescript-eslint/parser", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
@@ -34045,7 +34052,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-loadable", "npm:5.5.6"],
             ["@types/react-redux", "npm:7.1.20"],
-            ["@types/react-router-dom", "npm:5.3.2"],
+            ["@types/react-router-dom", "npm:5.3.3"],
             ["@types/react-test-renderer", "npm:17.0.1"],
             ["@types/redux", "npm:3.6.31"],
             ["@types/redux-thunk", "npm:2.1.32"],
