@@ -10543,10 +10543,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/uuid", [
-        ["npm:8.3.3", {
-          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.3-805fed50df-3f340155bb.zip/node_modules/@types/uuid/",
+        ["npm:8.3.4", {
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.4-7547f4402c-6f11f3ff70.zip/node_modules/@types/uuid/",
           "packageDependencies": [
-            ["@types/uuid", "npm:8.3.3"]
+            ["@types/uuid", "npm:8.3.4"]
           ],
           "linkType": "HARD",
         }]
@@ -24065,7 +24065,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/runtime", "npm:7.16.3"],
             ["@types/jest", "npm:26.0.24"],
             ["@types/node", "npm:14.17.34"],
-            ["@types/uuid", "npm:8.3.3"],
+            ["@types/uuid", "npm:8.3.4"],
             ["@typescript-eslint/eslint-plugin", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
             ["@typescript-eslint/parser", "virtual:4767af61653b6fb08ca2e5624249001af4356c2e5d6fb04d722cf9a73faa04a1aba7dce2282ae5bc5f7f8c56d555d2c855b72b442a15e6981c51cc081994615e#npm:4.29.3"],
             ["consent-app-react", "virtual:3a43af9903ed46e5a4f3b2dee814c6d144478ad9aeaf0416205a3ea3def3209eba6a06d1c3645abeed8c0d8de146b29bd035def93e5bfe329a601f78220abe65#workspace:."],
