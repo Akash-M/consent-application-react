@@ -17083,7 +17083,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"klona@npm:^2.0.4":
+"klona@npm:^2.0.4, klona@npm:^2.0.5":
   version: 2.0.5
   resolution: "klona@npm:2.0.5"
   checksum: 8c976126ea252b766e648a4866e1bccff9d3b08432474ad80c559f6c7265cf7caede2498d463754d8c88c4759895edd8210c85c0d3155e6aae4968362889466f
@@ -17281,7 +17281,7 @@ fsevents@^1.2.7:
     html-webpack-plugin: ^5.3.2
     lib-utils: "workspace:*"
     mini-css-extract-plugin: ^2.1.0
-    postcss-loader: ^6.1.1
+    postcss-loader: 6.2.1
     prettier: ^2.3.2
     raw-loader: ^4.0.2
     react: ^17.0.2
@@ -20242,6 +20242,20 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postcss-loader@npm:6.2.1":
+  version: 6.2.1
+  resolution: "postcss-loader@npm:6.2.1"
+  dependencies:
+    cosmiconfig: ^7.0.0
+    klona: ^2.0.5
+    semver: ^7.3.5
+  peerDependencies:
+    postcss: ^7.0.0 || ^8.0.1
+    webpack: ^5.0.0
+  checksum: e40ae79c3e39df37014677a817b001bd115d8b10dedf53a07b97513d93b1533cd702d7a48831bdd77b9a9484b1ec84a5d4a723f80e83fb28682c75b5e65e8a90
+  languageName: node
+  linkType: hard
+
 "postcss-loader@npm:^4.2.0":
   version: 4.3.0
   resolution: "postcss-loader@npm:4.3.0"
@@ -20255,20 +20269,6 @@ fsevents@^1.2.7:
     postcss: ^7.0.0 || ^8.0.1
     webpack: ^4.0.0 || ^5.0.0
   checksum: b8ba29789d48512c7ce10e9391b1e1512a4b8f8b4063ebff0f9ebdd0a3a01e433ccfa0d2db6dbdd63b126acf7692330f0773bef75e78d53f38eba556ca5f2aee
-  languageName: node
-  linkType: hard
-
-"postcss-loader@npm:^6.1.1":
-  version: 6.2.0
-  resolution: "postcss-loader@npm:6.2.0"
-  dependencies:
-    cosmiconfig: ^7.0.0
-    klona: ^2.0.4
-    semver: ^7.3.5
-  peerDependencies:
-    postcss: ^7.0.0 || ^8.0.1
-    webpack: ^5.0.0
-  checksum: 240a807b696ceab4fac88ca713a9264a322af49d021f5056da8d6ce00307d80d8ad429595221498b6c4d44edaf825b54e8d84b4eb7e517fec41e2909d4a5f75d
   languageName: node
   linkType: hard
 
@@ -25110,7 +25110,7 @@ typescript@^4.3.5:
     lib-utils: "workspace:*"
     mini-css-extract-plugin: ^2.1.0
     node-sass: ^7.0.0
-    postcss-loader: ^6.1.1
+    postcss-loader: 6.2.1
     prettier: ^2.3.2
     prop-types: ^15.7.2
     raw-loader: ^4.0.2
