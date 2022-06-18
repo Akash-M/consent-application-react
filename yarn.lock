@@ -6052,7 +6052,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^17.0.30":
+"@types/react@npm:*, @types/react@npm:>=16.9.0":
   version: 17.0.35
   resolution: "@types/react@npm:17.0.35"
   dependencies:
@@ -6060,6 +6060,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 33e2bf8068ccc5330f089f5d4bee54649c2d5b512edee4a9e44c113271a69ea8c71ddbd3103b205eb971fd4c358e9f69d707df08bec90b3c33492db374614eb7
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:17.0.47":
+  version: 17.0.47
+  resolution: "@types/react@npm:17.0.47"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 2e7fe0eb630cb77da03b6da308c58728c01b38e878118e9ff5cd8045181c8d4f32dc936e328f46a62cadb56e1fe4c5a911b5113584f93a99e1f35df7f059246b
   languageName: node
   linkType: hard
 
@@ -17255,7 +17266,7 @@ fsevents@^1.2.7:
     "@types/material-ui": ^0.21.12
     "@types/mini-css-extract-plugin": ^2.0.1
     "@types/node": ^14.17.19
-    "@types/react": ^17.0.30
+    "@types/react": 17.0.47
     "@types/react-dom": ^17.0.7
     "@types/react-router": ^5.1.17
     "@types/react-router-dom": ^5.1.9
@@ -17343,7 +17354,7 @@ fsevents@^1.2.7:
     "@testing-library/react": ^12.1.1
     "@types/jest": ^26.0.24
     "@types/node": ^14.17.19
-    "@types/react": ^17.0.30
+    "@types/react": 17.0.47
     "@types/react-dom": ^17.0.7
     "@types/react-redux": ^7.1.20
     "@types/react-router-dom": ^5.1.9
@@ -25063,7 +25074,7 @@ typescript@^4.3.5:
     "@types/mini-css-extract-plugin": ^2.0.1
     "@types/node": ^14.17.19
     "@types/prop-types": ^15.7.4
-    "@types/react": ^17.0.30
+    "@types/react": 17.0.47
     "@types/react-dom": ^17.0.7
     "@types/react-loadable": ^5.5.6
     "@types/react-redux": ^7.1.20
