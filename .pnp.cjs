@@ -9962,6 +9962,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/history", [
+        ["npm:4.7.11", {
+          "packageLocation": "./.yarn/cache/@types-history-npm-4.7.11-fe05d7b2e1-c92e2ba407.zip/node_modules/@types/history/",
+          "packageDependencies": [
+            ["@types/history", "npm:4.7.11"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.7.9", {
           "packageLocation": "./.yarn/cache/@types-history-npm-4.7.9-daa6588d04-556b062adb.zip/node_modules/@types/history/",
           "packageDependencies": [
@@ -10401,6 +10408,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/react-router", "npm:5.1.17"],
             ["@types/history", "npm:4.7.9"],
+            ["@types/react", "npm:17.0.35"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:5.1.19", {
+          "packageLocation": "./.yarn/cache/@types-react-router-npm-5.1.19-cb9302b3da-3536c3dec7.zip/node_modules/@types/react-router/",
+          "packageDependencies": [
+            ["@types/react-router", "npm:5.1.19"],
+            ["@types/history", "npm:4.7.11"],
             ["@types/react", "npm:17.0.35"]
           ],
           "linkType": "HARD",
@@ -24204,7 +24220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.35"],
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-hook-form", null],
-            ["@types/react-router", "npm:5.1.17"],
+            ["@types/react-router", "npm:5.1.19"],
             ["@types/react-router-dom", "npm:5.3.2"],
             ["@types/typescript", null],
             ["@types/webpack", "npm:5.28.0"],
@@ -24319,7 +24335,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.17.34"],
             ["@types/react", "npm:17.0.35"],
             ["@types/react-dom", "npm:17.0.11"],
-            ["@types/react-router", "npm:5.1.17"],
+            ["@types/react-router", "npm:5.1.19"],
             ["@types/react-router-dom", "npm:5.3.2"],
             ["@types/webpack", "npm:5.28.0"],
             ["@types/webpack-dev-server", "npm:4.5.0"],
