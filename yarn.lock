@@ -5964,7 +5964,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:>=16.9.0, @types/react-dom@npm:^17.0.7":
+"@types/react-dom@npm:17.0.17":
+  version: 17.0.17
+  resolution: "@types/react-dom@npm:17.0.17"
+  dependencies:
+    "@types/react": ^17
+  checksum: 23caf98aa03e968811560f92a2c8f451694253ebe16b670929b24eaf0e7fa62ba549abe9db0ac028a9d8a9086acd6ab9c6c773f163fa21224845edbc00ba6232
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:>=16.9.0":
   version: 17.0.11
   resolution: "@types/react-dom@npm:17.0.11"
   dependencies:
@@ -6060,6 +6069,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 33e2bf8068ccc5330f089f5d4bee54649c2d5b512edee4a9e44c113271a69ea8c71ddbd3103b205eb971fd4c358e9f69d707df08bec90b3c33492db374614eb7
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^17":
+  version: 17.0.50
+  resolution: "@types/react@npm:17.0.50"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: b5629dff7c2f3e9fcba95a19b2b3bfd78d7cacc33ba5fc26413dba653d34afcac3b93ddabe563e8062382688a1eac7db68e93739bb8e712d27637a03aaafbbb8
   languageName: node
   linkType: hard
 
@@ -17256,7 +17276,7 @@ fsevents@^1.2.7:
     "@types/mini-css-extract-plugin": ^2.0.1
     "@types/node": ^14.17.19
     "@types/react": ^17.0.30
-    "@types/react-dom": ^17.0.7
+    "@types/react-dom": 17.0.17
     "@types/react-router": ^5.1.17
     "@types/react-router-dom": ^5.1.9
     "@types/webpack": ^5.28.0
@@ -17344,7 +17364,7 @@ fsevents@^1.2.7:
     "@types/jest": ^26.0.24
     "@types/node": ^14.17.19
     "@types/react": ^17.0.30
-    "@types/react-dom": ^17.0.7
+    "@types/react-dom": 17.0.17
     "@types/react-redux": ^7.1.20
     "@types/react-router-dom": ^5.1.9
     "@types/redux": ^3.6.0
@@ -25064,7 +25084,7 @@ typescript@^4.3.5:
     "@types/node": ^14.17.19
     "@types/prop-types": ^15.7.4
     "@types/react": ^17.0.30
-    "@types/react-dom": ^17.0.7
+    "@types/react-dom": 17.0.17
     "@types/react-loadable": ^5.5.6
     "@types/react-redux": ^7.1.20
     "@types/react-router-dom": ^5.1.9
