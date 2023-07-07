@@ -124,7 +124,7 @@
     "sass-loader": "^12.1.0",
     "source-map-explorer": "^2.5.2",
     "style-loader": "^3.2.1",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.0.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^22.0.0",
